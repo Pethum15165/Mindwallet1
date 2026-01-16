@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contents - Mind Wallet</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contents - MindWalletEdu</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Mind Wallet</h2>
+                <h2>MindWalletEdu</h2>
             </div>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
@@ -23,7 +23,7 @@
                 <a href="learn.html" class="nav-link">Learn</a>
                 <a href="about.html" class="nav-link">About</a>
             </div>
-            <div class="hamburger">
+            <div class="hamburger" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -39,7 +39,7 @@
         </div>
     </section>
 
-    <!-- Finance Tips Section -->
+    <!-- Finance Tips Section with Articles -->
     <section id="tips" class="content-section">
         <div class="container">
             <h2 class="section-title">
@@ -117,160 +117,391 @@
                     <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
                 </article>
             </div>
-        </div>
-    </section>
 
-    <!-- Tricks & Strategies Section -->
-    <section id="strategies" class="content-section">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-chess"></i>
-                Tricks & Strategies
-            </h2>
-            <div class="content-grid">
-                <article class="content-card">
-                    <div class="card-header">
-                        <span class="category-badge">Advanced</span>
-                        <h3>Tax Optimization Strategies</h3>
-                    </div>
-                    <p>Legal strategies to minimize your tax burden and keep more of your hard-earned money.</p>
-                    <div class="video-preview">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="expandable-content">
-                        <div class="content-details">
-                            <h4>Key Strategies:</h4>
-                            <ul>
-                                <li>Maximize retirement account contributions</li>
-                                <li>Utilize tax-loss harvesting</li>
-                                <li>Consider Roth conversions</li>
-                                <li>Track deductible expenses meticulously</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
-                </article>
+            <!-- NEW: Latest Finance Tips Articles -->
+            <section class="articles-section">
+                <div class="container">
+                    <h2 class="section-title">Latest Finance Tips</h2>
+                    <div class="articles-grid">
+                        
+                        <!-- Article 1: Budgeting Mistakes -->
+                        <article class="article-card">
+                            <div class="article-image">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="article-content">
+                                <span class="category-badge">Budgeting</span>
+                                <h3>5 Budgeting Mistakes That Cost You Money</h3>
+                                <p>Learn the most common budgeting pitfalls and how to avoid them to save thousands each year. Discover why traditional budgeting fails and what actually works.</p>
+                                <div class="article-meta">
+                                    <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                                    <span class="date">Jan 15, 2024</span>
+                                </div>
+                                <button class="read-more-btn" onclick="openArticle('budget-mistakes')">Read Article</button>
+                            </div>
+                        </article>
 
-                <article class="content-card">
-                    <div class="card-header">
-                        <span class="category-badge">Investment</span>
-                        <h3>Dollar-Cost Averaging Mastery</h3>
-                    </div>
-                    <p>Learn how to use dollar-cost averaging to reduce investment risk and build wealth consistently.</p>
-                    <div class="video-preview">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="expandable-content">
-                        <div class="content-details">
-                            <h4>Implementation Guide:</h4>
-                            <ul>
-                                <li>Set up automatic monthly investments</li>
-                                <li>Choose low-cost index funds</li>
-                                <li>Stay consistent through market volatility</li>
-                                <li>Gradually increase contribution amounts</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
-                </article>
-            </div>
-        </div>
-    </section>
+                        <!-- Article 2: $5 Challenge -->
+                        <article class="article-card">
+                            <div class="article-image">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <div class="article-content">
+                                <span class="category-badge">Saving</span>
+                                <h3>The $5 Challenge That Builds Your Emergency Fund</h3>
+                                <p>A simple daily habit that can help you build a $1,800 emergency fund in just one year. No complicated apps or extreme frugality required.</p>
+                                <div class="article-meta">
+                                    <span class="read-time"><i class="far fa-clock"></i> 3 min read</span>
+                                    <span class="date">Jan 12, 2024</span>
+                                </div>
+                                <button class="read-more-btn" onclick="openArticle('5-dollar-challenge')">Read Article</button>
+                            </div>
+                        </article>
 
-    <!-- Stories Section -->
-    <section id="stories" class="content-section">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-book"></i>
-                Real-Life Finance Stories
-            </h2>
-            <div class="content-grid">
-                <article class="content-card">
-                    <div class="card-header">
-                        <span class="category-badge">Success Story</span>
-                        <h3>From Debt to Financial Freedom</h3>
-                    </div>
-                    <p>How Sarah paid off $50,000 in debt and built a six-figure investment portfolio in 5 years.</p>
-                    <div class="video-preview">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="expandable-content">
-                        <div class="content-details">
-                            <h4>Sarah's Journey:</h4>
-                            <p>Sarah started with $50,000 in credit card and student loan debt. She used the debt avalanche method, increased her income through side hustles, and automated her savings. Today, she's debt-free and has over $100,000 invested.</p>
-                            <h4>Key Lessons:</h4>
-                            <ul>
-                                <li>Consistency beats perfection</li>
-                                <li>Small changes compound over time</li>
-                                <li>Emergency funds prevent debt relapse</li>
-                                <li>Investing while paying off debt accelerates progress</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
-                </article>
+                        <!-- Article 3: Investment Comparison -->
+                        <article class="article-card">
+                            <div class="article-image">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="article-content">
+                                <span class="category-badge">Investment</span>
+                                <h3>Index Funds vs ETFs: Which is Better for Beginners?</h3>
+                                <p>Clear comparison to help you choose the right investment vehicle for your financial goals. Includes real examples and cost breakdowns.</p>
+                                <div class="article-meta">
+                                    <span class="read-time"><i class="far fa-clock"></i> 7 min read</span>
+                                    <span class="date">Jan 10, 2024</span>
+                                </div>
+                                <button class="read-more-btn" onclick="openArticle('index-vs-etfs')">Read Article</button>
+                            </div>
+                        </article>
 
-                <article class="content-card">
-                    <div class="card-header">
-                        <span class="category-badge">Retirement</span>
-                        <h3>Early Retirement at 35</h3>
-                    </div>
-                    <p>The story of how Mark achieved financial independence and retired early through smart investing and frugal living.</p>
-                    <div class="video-preview">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="expandable-content">
-                        <div class="content-details">
-                            <h4>Mark's Strategy:</h4>
-                            <p>Mark saved 50% of his income, invested aggressively in index funds, and built multiple income streams. He reached financial independence at 35 and now travels the world.</p>
-                            <h4>Critical Factors:</h4>
-                            <ul>
-                                <li>High savings rate (50%+ of income)</li>
-                                <li>Low-cost index fund investing</li>
-                                <li>Multiple income streams</li>
-                                <li>Geographic arbitrage</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
-                </article>
-            </div>
-        </div>
-    </section>
+                        <!-- Article 4: Tax Tips -->
+                        <article class="article-card">
+                            <div class="article-image">
+                                <i class="fas fa-receipt"></i>
+                            </div>
+                            <div class="article-content">
+                                <span class="category-badge">Taxes</span>
+                                <h3>7 Tax Deductions You're Probably Missing</h3>
+                                <p>Don't leave money on the table! These commonly overlooked deductions could save you hundreds on your tax bill.</p>
+                                <div class="article-meta">
+                                    <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                                    <span class="date">Jan 8, 2024</span>
+                                </div>
+                                <button class="read-more-btn" onclick="openArticle('tax-deductions')">Read Article</button>
+                            </div>
+                        </article>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Mind Wallet</h3>
-                    <p>Empowering individuals with financial knowledge and strategies for a better future.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contents.html">Contents</a></li>
-                        <li><a href="learn.html">Learn</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <!-- Article 5: Side Hustle -->
+                        <article class="article-card">
+                            <div class="article-image">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="article-content">
+                                <span class="category-badge">Income</span>
+                                <h3>Weekend Side Hustles That Actually Pay Well</h3>
+                                <p>Real opportunities to earn $500+ per month working just weekends. No MLMs or get-rich-quick schemes - just legitimate income sources.</p>
+                                <div class="article-meta">
+                                    <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                                    <span class="date">Jan 5, 2024</span>
+                                </div>
+                                <button class="read-more-btn" onclick="openArticle('weekend-side-hustles')">Read Article</button>
+                            </div>
+                        </article>
+
+                        <!-- Article 6: Emergency Fund -->
+                        <article class="article-card">
+                            <div class="article-image">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="article-content">
+                                <span class="category-badge">Emergency Fund</span>
+                                <h3>Emergency Fund Calculator: Find Your Perfect Amount</h3>
+                                <p>Interactive guide to determine exactly how much you need in your emergency fund based on your lifestyle and expenses.</p>
+                                <div class="article-meta">
+                                    <span class="read-time"><i class="far fa-clock"></i> 10 min read</span>
+                                    <span class="date">Jan 3, 2024</span>
+                                </div>
+                                <button class="read-more-btn" onclick="openArticle('emergency-fund-calculator')">Read Article</button>
+                            </div>
+                        </article>
+
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Mind Wallet. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+            </section>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Tricks & Strategies Section -->
+        <section id="strategies" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-chess"></i>
+                    Tricks & Strategies
+                </h2>
+                <div class="content-grid">
+                    <article class="content-card">
+                        <div class="card-header">
+                            <span class="category-badge">Advanced</span>
+                            <h3>Tax Optimization Strategies</h3>
+                        </div>
+                        <p>Legal strategies to minimize your tax burden and keep more of your hard-earned money.</p>
+                        <div class="video-preview">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="content-details">
+                                <h4>Key Strategies:</h4>
+                                <ul>
+                                    <li>Maximize retirement account contributions</li>
+                                    <li>Utilize tax-loss harvesting</li>
+                                    <li>Consider Roth conversions</li>
+                                    <li>Track deductible expenses meticulously</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                    </article>
+
+                    <article class="content-card">
+                        <div class="card-header">
+                            <span class="category-badge">Investment</span>
+                            <h3>Dollar-Cost Averaging Mastery</h3>
+                        </div>
+                        <p>Learn how to use dollar-cost averaging to reduce investment risk and build wealth consistently.</p>
+                        <div class="video-preview">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="expandable-content">
+                            <div class="content-details">
+                                <h4>Implementation Guide:</h4>
+                                <ul>
+                                    <li>Set up automatic monthly investments</li>
+                                    <li>Choose low-cost index funds</li>
+                                    <li>Stay consistent through market volatility</li>
+                                    <li>Gradually increase contribution amounts</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories Section with Real Articles -->
+        <section id="stories" class="content-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Real-Life Finance Stories
+                </h2>
+                
+                <!-- Featured Success Stories -->
+                <div class="stories-grid">
+                    
+                    <!-- Story 1: Debt Freedom -->
+                    <article class="story-card featured">
+                        <div class="story-header">
+                            <span class="story-badge">Success Story</span>
+                            <h3>From $50K Debt to Financial Freedom in 3 Years</h3>
+                        </div>
+                        <div class="story-content">
+                            <p>Sarah's journey from overwhelming credit card debt to building a six-figure investment portfolio. Learn the exact strategies she used to pay off $50,000 in just 36 months.</p>
+                            <div class="story-highlights">
+                                <div class="highlight">
+                                    <span class="number">$50,000</span>
+                                    <span class="label">Debt Paid Off</span>
+                                </div>
+                                <div class="highlight">
+                                    <span class="number">36</span>
+                                    <span class="label">Months</span>
+                                </div>
+                                <div class="highlight">
+                                    <span class="number">$125K</span>
+                                    <span class="label">Current Investments</span>
+                                </div>
+                            </div>
+                            <div class="story-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"The turning point was when I realized I wasn't bad with money - I just needed a system that worked for me."</p>
+                                <cite>- Sarah M., 32, Marketing Manager</cite>
+                            </div>
+                            <button class="read-story-btn" onclick="openStory('sarah-debt-journey')">
+                                Read Full Story <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Story 2: Early Retirement -->
+                    <article class="story-card">
+                        <div class="story-header">
+                            <span class="story-badge">Retirement</span>
+                            <h3>Retired at 35: The FIRE Journey</h3>
+                        </div>
+                        <div class="story-content">
+                            <p>How Mark achieved financial independence through aggressive saving and smart investing. Discover the exact FIRE strategy that allowed him to retire 30 years early.</p>
+                            <div class="story-timeline">
+                                <div class="timeline-item">
+                                    <span class="month">Age 25:</span>
+                                    <span class="desc">Started with $50K salary, 60% savings rate</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="month">Age 30:</span>
+                                    <span class="desc">Reached $300K net worth</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="month">Age 35:</span>
+                                    <span class="desc">Achieved FIRE with $750K invested</span>
+                                </div>
+                            </div>
+                            <div class="story-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"The key was automating everything and living below my means. Compound interest did the heavy lifting."</p>
+                                <cite>- Mark T., 35, Retired</cite>
+                            </div>
+                            <button class="read-story-btn" onclick="openStory('mark-fire-journey')">
+                                Read Full Story <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Story 3: Side Hustle Success -->
+                    <article class="story-card">
+                        <div class="story-header">
+                            <span class="story-badge">Side Hustle</span>
+                            <h3>How I Made $2,000/Month with Weekend Side Gigs</h3>
+                        </div>
+                        <div class="story-content">
+                            <p>Jenny's creative approach to boosting her income while working full-time. Learn how she built multiple income streams that now earn more than her day job.</p>
+                            <div class="story-timeline">
+                                <div class="timeline-item">
+                                    <span class="month">Month 1-3:</span>
+                                    <span class="desc">$500/month - Freelance writing</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="month">Month 4-6:</span>
+                                    <span class="desc">$1,200/month - Added tutoring</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="month">Month 7+:</span>
+                                    <span class="desc">$2,000/month - Multiple streams</span>
+                                </div>
+                            </div>
+                            <div class="story-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"Start with what you know. I began with writing about my industry, then expanded to teaching others."</p>
+                                <cite>- Jenny K., 28, Side Hustle Expert</cite>
+                            </div>
+                            <button class="read-story-btn" onclick="openStory('jenny-side-hustle')">
+                                Read Full Story <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Story 4: First Home Purchase -->
+                    <article class="story-card">
+                        <div class="story-header">
+                            <span class="story-badge">Home Buying</span>
+                            <h3>Bought First Home at 25 with Smart Saving</h3>
+                        </div>
+                        <div class="story-content">
+                            <p>David's strategic approach to saving for a down payment while renting. How he saved $40K in 2 years on a $55K salary.</p>
+                            <div class="story-highlights">
+                                <div class="highlight">
+                                    <span class="number">$40K</span>
+                                    <span class="label">Down Payment Saved</span>
+                                </div>
+                                <div class="highlight">
+                                    <span class="number">24</span>
+                                    <span class="label">Months</span>
+                                </div>
+                                <div class="highlight">
+                                    <span class="number">$55K</span>
+                                    <span class="label">Starting Salary</span>
+                                </div>
+                            </div>
+                            <div class="story-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"House hacking was the game-changer. I rented out rooms to cut my housing costs in half."</p>
+                                <cite>- David L., 27, Homeowner</cite>
+                            </div>
+                            <button class="read-story-btn" onclick="openStory('david-home-savings')">
+                                Read Full Story <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Story 5: Investment Journey -->
+                    <article class="story-card">
+                        <div class="story-header">
+                            <span class="story-badge">Investment</span>
+                            <h3>From $100 to $10K: My First Year Investing</h3>
+                        </div>
+                        <div class="story-content">
+                            <p>Maria's investment journey starting with just $100. Learn how she grew her portfolio through consistent investing and education.</p>
+                            <div class="story-timeline">
+                                <div class="timeline-item">
+                                    <span class="month">Month 1:</span>
+                                    <span class="desc">Started with $100 in index funds</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="month">Month 6:</span>
+                                    <span class="desc">$3,000 invested, learning constantly</span>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="month">Month 12:</span>
+                                    <span class="desc">$10,000 portfolio, 15% returns</span>
+                                </div>
+                            </div>
+                            <div class="story-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"I started small but invested consistently. The key was never stopping the learning process."</p>
+                                <cite>- Maria S., 24, Investor</cite>
+                            </div>
+                            <button class="read-story-btn" onclick="openStory('maria-investment-journey')">
+                                Read Full Story <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>MindWalletEdu</h3>
+                        <p>Empowering individuals with financial knowledge and strategies for a better future.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="contents.html">Contents</a></li>
+                            <li><a href="learn.html">Learn</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 MindWalletEdu. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
-
