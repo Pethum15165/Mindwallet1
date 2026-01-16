@@ -347,8 +347,9 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('MindWalletEdu initialized successfully!');
+    console.log('Mind Wallet initialized successfully!');
     
     // Add any additional initialization code here
     // For example, loading dynamic content, setting up analytics, etc.
 });
+
