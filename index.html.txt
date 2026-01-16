@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindWalletEdu - Upgrade Your Mind. Build Your Future.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>MindWalletEdu</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="contents.html" class="nav-link">Contents</a>
+                <a href="learn.html" class="nav-link">Learn</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">MindWalletEdu</h1>
+            <p class="hero-tagline">Upgrade Your Mind. Build Your Future.</p>
+            <p class="hero-description">
+                Your comprehensive platform for financial education, tips, and real-life money management strategies. 
+                Learn to make smarter financial decisions and build long-term wealth.
+            </p>
+            <div class="hero-buttons">
+                <a href="contents.html" class="btn btn-primary">Explore Content</a>
+                <a href="learn.html" class="btn btn-secondary">Start Learning</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+        <div class="container">
+            <div class="cards-grid">
+                <div class="summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Finance Tips</h3>
+                    <p>Practical money management tips and strategies for everyday financial success.</p>
+                    <a href="contents.html#tips" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Smart Strategies</h3>
+                    <p>Advanced financial strategies and tricks to maximize your wealth building potential.</p>
+                    <a href="contents.html#strategies" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="summary-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real Stories</h3>
+                    <p>Inspiring real-life finance stories and lessons from successful money managers.</p>
+                    <a href="contents.html#stories" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured-articles">
+        <div class="container">
+            <h2 class="section-title">Featured Articles</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="article-content">
+                        <span class="category-badge">Budgeting</span>
+                        <h3>The 50/30/20 Rule Explained</h3>
+                        <p>Master the simple budgeting rule that can transform your financial life and help you achieve your money goals faster.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="article-content">
+                        <span class="category-badge">Investing</span>
+                        <h3>Investment Basics for Beginners</h3>
+                        <p>Start your investment journey with these fundamental concepts and strategies for building long-term wealth.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="article-content">
+                        <span class="category-badge">Emergency Fund</span>
+                        <h3>Building Your Emergency Fund</h3>
+                        <p>Learn how to create and maintain an emergency fund that will protect you from unexpected financial setbacks.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="social-links">
+                <a href="#" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MindWalletEdu</h3>
+                    <p>Empowering individuals with financial knowledge and strategies for a better future.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contents.html">Contents</a></li>
+                        <li><a href="learn.html">Learn</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MindWalletEdu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

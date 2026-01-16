@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn - MindWalletEdu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>MindWalletEdu</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="contents.html" class="nav-link">Contents</a>
+                <a href="learn.html" class="nav-link active">Learn</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Learn Header -->
+    <section class="learn-header">
+        <div class="container">
+            <h1>Financial Learning Center</h1>
+            <p>Master essential financial concepts with our interactive learning modules</p>
+        </div>
+    </section>
+
+    <!-- Learning Topics -->
+    <section class="learning-topics">
+        <div class="container">
+            <!-- Budgeting Section -->
+            <div class="topic-section">
+                <div class="topic-header">
+                    <i class="fas fa-calculator"></i>
+                    <h2>Budgeting Fundamentals</h2>
+                </div>
+                <div class="topic-cards">
+                    <div class="learning-card">
+                        <h3>What is Budgeting?</h3>
+                        <p>Budgeting is the process of creating a plan to spend your money. This spending plan is called a budget.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Key Concepts:</h4>
+                                <ul>
+                                    <li>Income vs. Expenses</li>
+                                    <li>Fixed vs. Variable Costs</li>
+                                    <li>Needs vs. Wants</li>
+                                    <li>Emergency Fund Planning</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Example:</h5>
+                                    <p>If your monthly income is $3,000, a basic budget might allocate:</p>
+                                    <ul>
+                                        <li>$1,500 (50%) for needs (rent, utilities, groceries)</li>
+                                        <li>$900 (30%) for wants (entertainment, dining out)</li>
+                                        <li>$600 (20%) for savings and debt repayment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>Popular Budgeting Methods</h3>
+                        <p>Explore different budgeting approaches to find what works best for your lifestyle.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>50/30/20 Rule:</h4>
+                                <p>Allocate 50% to needs, 30% to wants, and 20% to savings and debt repayment.</p>
+                                
+                                <h4>Zero-Based Budgeting:</h4>
+                                <p>Assign every dollar a job until your income minus expenses equals zero.</p>
+                                
+                                <h4>Envelope System:</h4>
+                                <p>Use physical or digital envelopes for different spending categories.</p>
+                                
+                                <div class="example-box">
+                                    <h5>Comparison Example:</h5>
+                                    <p>With $4,000 monthly income:</p>
+                                    <ul>
+                                        <li><strong>50/30/20:</strong> $2,000 needs, $1,200 wants, $800 savings</li>
+                                        <li><strong>Zero-Based:</strong> Plan every dollar: $1,800 rent, $600 groceries, $500 savings, etc.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saving Section -->
+            <div class="topic-section">
+                <div class="topic-header">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h2>Saving Strategies</h2>
+                </div>
+                <div class="topic-cards">
+                    <div class="learning-card">
+                        <h3>Emergency Fund Essentials</h3>
+                        <p>Build a financial safety net to protect yourself from unexpected expenses.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Why Emergency Funds Matter:</h4>
+                                <ul>
+                                    <li>Prevents debt accumulation during crises</li>
+                                    <li>Provides peace of mind</li>
+                                    <li>Covers 3-6 months of expenses</li>
+                                    <li>Keeps you financially stable</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Building Your Fund:</h5>
+                                    <p>Start with $1,000 mini-emergency fund, then build to 3-6 months of expenses:</p>
+                                    <ul>
+                                        <li>Monthly expenses: $2,500</li>
+                                        <li>3-month fund: $7,500</li>
+                                        <li>6-month fund: $15,000</li>
+                                    </ul>
+                                    <p>Save $300/month = 6-month fund in 25 months</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>Automated Saving Techniques</h3>
+                        <p>Make saving effortless through automation and smart financial habits.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Automation Strategies:</h4>
+                                <ul>
+                                    <li>Direct deposit to savings account</li>
+                                    <li>Automatic transfers on payday</li>
+                                    <li>Round-up savings apps</li>
+                                    <li>Automatic bill payment to avoid fees</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Automation Example:</h5>
+                                    <p>Set up automatic transfers:</p>
+                                    <ul>
+                                        <li>$200 to emergency fund monthly</li>
+                                        <li>$150 to retirement account</li>
+                                        <li>$50 to vacation fund</li>
+                                        <li>Round up purchases to nearest dollar</li>
+                                    </ul>
+                                    <p>Total automated savings: $400+ per month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investing Basics Section -->
+            <div class="topic-section">
+                <div class="topic-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Investing Basics</h2>
+                </div>
+                <div class="topic-cards">
+                    <div class="learning-card">
+                        <h3>Investment Fundamentals</h3>
+                        <p>Understanding the basics of investing and how to get started.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Key Investment Concepts:</h4>
+                                <ul>
+                                    <li>Risk vs. Return</li>
+                                    <li>Diversification</li>
+                                    <li>Compound Interest</li>
+                                    <li>Time Horizon</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Compound Interest Example:</h5>
+                                    <p>Invest $200/month at 7% annual return:</p>
+                                    <ul>
+                                        <li>After 10 years: $34,576</li>
+                                        <li>After 20 years: $102,081</li>
+                                        <li>After 30 years: $226,741</li>
+                                    </ul>
+                                    <p>Total invested: $72,000 | Value: $226,741</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>Investment Vehicles</h3>
+                        <p>Explore different types of investments and their characteristics.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Common Investment Types:</h4>
+                                <ul>
+                                    <li><strong>Stocks:</strong> Ownership in companies</li>
+                                    <li><strong>Bonds:</strong> Loans to companies/governments</li>
+                                    <li><strong>Index Funds:</strong> Diversified market exposure</li>
+                                    <li><strong>ETFs:</strong> Exchange-traded funds</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Sample Portfolio for Beginners:</h5>
+                                    <p>Age 25, moderate risk tolerance:</p>
+                                    <ul>
+                                        <li>70% Total Stock Market Index Fund</li>
+                                        <li>20% International Stock Index Fund</li>
+                                        <li>10% Bond Index Fund</li>
+                                    </ul>
+                                    <p>Low-cost, diversified, automatically rebalanced</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Discipline Section -->
+            <div class="topic-section">
+                <div class="topic-header">
+                    <i class="fas fa-brain"></i>
+                    <h2>Financial Discipline</h2>
+                </div>
+                <div class="topic-cards">
+                    <div class="learning-card">
+                        <h3>Building Financial Habits</h3>
+                        <p>Develop the mental discipline needed for long-term financial success.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Essential Financial Habits:</h4>
+                                <ul>
+                                    <li>Track spending daily</li>
+                                    <li>Review finances weekly</li>
+                                    <li>Set monthly financial goals</li>
+                                    <li>Celebrate financial milestones</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Habit Building Example:</h5>
+                                    <p>30-Day Financial Challenge:</p>
+                                    <ul>
+                                        <li>Week 1: Track every expense</li>
+                                        <li>Week 2: Create and follow a budget</li>
+                                        <li>Week 3: Automate one savings goal</li>
+                                        <li>Week 4: Research one investment option</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-card">
+                        <h3>Overcoming Financial Obstacles</h3>
+                        <p>Common challenges and strategies to overcome them on your financial journey.</p>
+                        <div class="accordion">
+                            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <h4>Common Obstacles & Solutions:</h4>
+                                <ul>
+                                    <li><strong>Lifestyle Inflation:</strong> Increase savings as income grows</li>
+                                    <li><strong>FOMO Spending:</strong> Focus on long-term goals</li>
+                                    <li><strong>Emergency Setbacks:</strong> Build robust emergency fund</li>
+                                    <li><strong>Lack of Knowledge:</strong> Continuous financial education</li>
+                                </ul>
+                                <div class="example-box">
+                                    <h5>Overcoming Setbacks:</h5>
+                                    <p>When facing financial challenges:</p>
+                                    <ul>
+                                        <li>Return to basics: track spending</li>
+                                        <li>Temporarily increase income</li>
+                                        <li>Reduce non-essential expenses</li>
+                                        <li>Seek support from financial communities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MindWalletEdu</h3>
+                    <p>Empowering individuals with financial knowledge and strategies for a better future.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contents.html">Contents</a></li>
+                        <li><a href="learn.html">Learn</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MindWalletEdu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

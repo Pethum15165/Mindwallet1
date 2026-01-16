@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contents - MindWalletEdu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>MindWalletEdu</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="contents.html" class="nav-link active">Contents</a>
+                <a href="learn.html" class="nav-link">Learn</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contents Header -->
+    <section class="contents-header">
+        <div class="container">
+            <h1>Finance Content Library</h1>
+            <p>Explore our comprehensive collection of finance tips, strategies, and real-life stories</p>
+        </div>
+    </section>
+
+    <!-- Finance Tips Section -->
+    <section id="tips" class="content-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                Finance Tips
+            </h2>
+            <div class="content-grid">
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Budgeting</span>
+                        <h3>Monthly Budget Planning Made Simple</h3>
+                    </div>
+                    <p>Learn how to create a realistic monthly budget that actually works for your lifestyle and helps you save more money.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Key Takeaways:</h4>
+                            <ul>
+                                <li>Track your income and expenses for one month</li>
+                                <li>Categorize spending into needs and wants</li>
+                                <li>Set realistic savings goals</li>
+                                <li>Use the 50/30/20 rule as a starting point</li>
+                            </ul>
+                            <p>Start by listing all your sources of income, then track every expense for a month. This will give you a clear picture of where your money is going and help you identify areas where you can cut back.</p>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Saving</span>
+                        <h3>Automate Your Savings Strategy</h3>
+                    </div>
+                    <p>Discover how automation can help you save money effortlessly and build wealth over time.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Implementation Steps:</h4>
+                            <ul>
+                                <li>Set up automatic transfers to savings account</li>
+                                <li>Use apps that round up purchases and save the difference</li>
+                                <li>Automate bill payments to avoid late fees</li>
+                                <li>Increase savings rate gradually over time</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Debt</span>
+                        <h3>Debt Reduction Strategies That Work</h3>
+                    </div>
+                    <p>Effective methods to pay off debt faster and regain control of your financial future.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Proven Methods:</h4>
+                            <ul>
+                                <li>Snowball method: Pay smallest debts first</li>
+                                <li>Avalanche method: Pay highest interest first</li>
+                                <li>Consolidate high-interest debt</li>
+                                <li>Negotiate lower interest rates</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tricks & Strategies Section -->
+    <section id="strategies" class="content-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-chess"></i>
+                Tricks & Strategies
+            </h2>
+            <div class="content-grid">
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Advanced</span>
+                        <h3>Tax Optimization Strategies</h3>
+                    </div>
+                    <p>Legal strategies to minimize your tax burden and keep more of your hard-earned money.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Key Strategies:</h4>
+                            <ul>
+                                <li>Maximize retirement account contributions</li>
+                                <li>Utilize tax-loss harvesting</li>
+                                <li>Consider Roth conversions</li>
+                                <li>Track deductible expenses meticulously</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Investment</span>
+                        <h3>Dollar-Cost Averaging Mastery</h3>
+                    </div>
+                    <p>Learn how to use dollar-cost averaging to reduce investment risk and build wealth consistently.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Implementation Guide:</h4>
+                            <ul>
+                                <li>Set up automatic monthly investments</li>
+                                <li>Choose low-cost index funds</li>
+                                <li>Stay consistent through market volatility</li>
+                                <li>Gradually increase contribution amounts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="content-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Real-Life Finance Stories
+            </h2>
+            <div class="content-grid">
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Success Story</span>
+                        <h3>From Debt to Financial Freedom</h3>
+                    </div>
+                    <p>How Sarah paid off $50,000 in debt and built a six-figure investment portfolio in 5 years.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Sarah's Journey:</h4>
+                            <p>Sarah started with $50,000 in credit card and student loan debt. She used the debt avalanche method, increased her income through side hustles, and automated her savings. Today, she's debt-free and has over $100,000 invested.</p>
+                            <h4>Key Lessons:</h4>
+                            <ul>
+                                <li>Consistency beats perfection</li>
+                                <li>Small changes compound over time</li>
+                                <li>Emergency funds prevent debt relapse</li>
+                                <li>Investing while paying off debt accelerates progress</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-header">
+                        <span class="category-badge">Retirement</span>
+                        <h3>Early Retirement at 35</h3>
+                    </div>
+                    <p>The story of how Mark achieved financial independence and retired early through smart investing and frugal living.</p>
+                    <div class="video-preview">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="expandable-content">
+                        <div class="content-details">
+                            <h4>Mark's Strategy:</h4>
+                            <p>Mark saved 50% of his income, invested aggressively in index funds, and built multiple income streams. He reached financial independence at 35 and now travels the world.</p>
+                            <h4>Critical Factors:</h4>
+                            <ul>
+                                <li>High savings rate (50%+ of income)</li>
+                                <li>Low-cost index fund investing</li>
+                                <li>Multiple income streams</li>
+                                <li>Geographic arbitrage</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleContent(this)">Read More</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MindWalletEdu</h3>
+                    <p>Empowering individuals with financial knowledge and strategies for a better future.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contents.html">Contents</a></li>
+                        <li><a href="learn.html">Learn</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MindWalletEdu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
