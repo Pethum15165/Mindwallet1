@@ -25,157 +25,55 @@ function toggleAccordion(button) {
     }
 }
 
-// ===== EXPANDABLE CONTENT =====
-function toggleContent(button) {
-    const card = button.closest('.content-card');
-    const expandableContent = card.querySelector('.expandable-content');
-    
-    if (expandableContent.classList.contains('active')) {
-        expandableContent.classList.remove('active');
-        button.textContent = 'Read More';
-    } else {
-        expandableContent.classList.add('active');
-        button.textContent = 'Read Less';
-    }
-}
-
 // ===== ARTICLE MODAL SYSTEM =====
-function openArticle(articleId) {
+function openEducationalArticle(articleId) {
     const articles = {
-        // === CONTENTS PAGE ARTICLES ===
-        'budget-mistakes': {
-            title: "5 Budgeting Mistakes That Cost You Money",
+        'compound-interest-guide': {
+            title: "Understanding Compound Interest: The 8th Wonder of the World",
             date: "January 15, 2024",
-            readTime: "5 min read",
-            category: "Budgeting",
+            readTime: "15 min read",
+            category: "Investing",
             content: `
-                <h2>Introduction</h2>
-                <p>Budgeting is supposed to help you save money, but many people make costly mistakes that actually hurt their finances. After working with hundreds of clients, I've identified the five most common budgeting mistakes that cost people thousands of dollars each year.</p>
+                <h2>What is Compound Interest?</h2>
+                <p>Compound interest is the interest you earn on your initial investment plus all the interest that investment has already earned. It's literally money making money.</p>
 
-                <h2>Mistake #1: Not Tracking Small Expenses</h2>
-                <p>That daily $5 coffee might seem harmless, but it adds up to $1,825 per year. Small expenses are budget killers because they're easy to overlook and seem insignificant.</p>
-                <p><strong>Solution:</strong> Track every expense for one month, no matter how small. Use a budgeting app or simply write it down. You'll be surprised how much those "little" purchases add up.</p>
+                <h2>The Magic Formula</h2>
+                <p>The compound interest formula is: A = P(1 + r/n)^(nt)</p>
+                <ul>
+                    <li>A = Final amount</li>
+                    <li>P = Principal (initial investment)</li>
+                    <li>r = Annual interest rate</li>
+                    <li>n = Number of times interest is compounded per year</li>
+                    <li>t = Time in years</li>
+                </ul>
 
-                <h2>Mistake #2: Setting Unrealistic Goals</h2>
-                <p>When you set overly restrictive budgets, you're setting yourself up for failure. If you normally spend $800 on groceries, cutting it to $400 immediately is unrealistic.</p>
-                <p><strong>Solution:</strong> Start with small changes. Reduce grocery spending by 10% for the first month, then gradually decrease as you learn better shopping habits.</p>
-
-                <h2>Mistake #3: Not Accounting for Irregular Expenses</h2>
-                <p>Car insurance, property taxes, and holiday gifts don't happen monthly, but they still need to be in your budget.</p>
-                <p><strong>Solution:</strong> Create sinking funds for irregular expenses. Divide annual costs by 12 and save that amount monthly.</p>
-
-                <h2>Mistake #4: Being Too Restrictive</h2>
-                <p>Budgets that don't allow for any fun or flexibility are doomed to fail. You need room to enjoy life while working toward financial goals.</p>
-                <p><strong>Solution:</strong> Include entertainment and "fun money" in your budget. A sustainable budget is better than a perfect one you can't stick to.</p>
-
-                <h2>Mistake #5: Not Adjusting Your Budget</h2>
-                <p>Life changes, and your budget should too. A budget that worked six months ago might not work today.</p>
-                <p><strong>Solution:</strong> Review and adjust your budget monthly. Make changes based on what's working and what isn't.</p>
-
-                <h2>Conclusion</h2>
-                <p>Avoiding these common budgeting mistakes can save you thousands of dollars each year. Remember, the best budget is the one you'll actually stick to. Start small, be consistent, and adjust as needed.</p>
-            `
-        },
-        '5-dollar-challenge': {
-            title: "The $5 Challenge That Builds Your Emergency Fund",
-            date: "January 12, 2024",
-            readTime: "3 min read",
-            category: "Saving",
-            content: `
-                <h2>What is the $5 Challenge?</h2>
-                <p>It's simple: Every time you receive a $5 bill as change, you save it instead of spending it. This simple habit can build you $1,800 per year without feeling like you're sacrificing anything.</p>
-
-                <h2>The Math Behind It</h2>
-                <p>If you save just two $5 bills per week, that's $520 per year. Save four $5 bills per week, and you'll have over $1,000. The key is consistency and not overthinking it.</p>
-                <div class="example-box">
-                    <h3>Your Potential Savings</h3>
-                    <ul>
-                        <li>1 $5 bill per week = $260 per year</li>
-                        <li>2 $5 bills per week = $520 per year</li>
-                        <li>3 $5 bills per week = $780 per year</li>
-                        <li>4 $5 bills per week = $1,040 per year</li>
-                    </ul>
+                <h2>Real-World Example</h2>
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
+                    <h3>Invest $200/month at 7% annual return for 30 years:</h3>
+                    <p>Total invested: $72,000</p>
+                    <p>Final value: $226,741</p>
+                    <p>Compound interest earned: $154,741</p>
                 </div>
 
-                <h2>How to Start the Challenge</h2>
-                <p><strong>Step 1:</strong> Find a container - a jar, envelope, or box works perfectly.</p>
-                <p><strong>Step 2:</strong> Every time you get a $5 bill, put it in the container immediately.</p>
-                <p><strong>Step 3:</strong> Don't touch the money for one year.</p>
-                <p><strong>Step 4:</strong> Deposit the savings into your emergency fund.</p>
+                <h2>Why Time Matters</h2>
+                <p>The earlier you start, the more powerful compound interest becomes. Someone who starts investing at 25 will have significantly more at retirement than someone who starts at 35, even if they invest the same total amount.</p>
 
-                <h2>Making It Work for You</h2>
-                <p><strong>Use Cash More Often:</strong> The more you use cash, the more $5 bills you'll encounter.</p>
-                <p><strong>Get Family Involved:</strong> Make it a household challenge. Kids love collecting money!</p>
-                <p><strong>Track Your Progress:</strong> Keep a simple tally of how many $5 bills you save each month.</p>
-
-                <h2>Success Stories</h2>
-                <p>Sarah, a teacher from Ohio, saved $1,340 in one year using this method. "It didn't feel like I was sacrificing anything," she says. "I just stopped spending $5 bills."</p>
+                <h2>How to Maximize Compound Interest</h2>
+                <ul>
+                    <li>Start early - time is your biggest asset</li>
+                    <li>Invest regularly (monthly if possible)</li>
+                    <li>Don't interrupt the compounding process</li>
+                    <li>Reinvest dividends and returns</li>
+                    <li>Be patient - compounding takes time</li>
+                </ul>
 
                 <h2>Conclusion</h2>
-                <p>The $5 challenge is perfect for people who struggle with traditional saving methods. It's simple, painless, and effective. Start today and watch your emergency fund grow!</p>
-            `
-        },
-        'index-vs-etfs': {
-            title: "Index Funds vs ETFs: Which is Better for Beginners?",
-            date: "January 10, 2024",
-            readTime: "7 min read",
-            category: "Investment",
-            content: `
-                <h2>Understanding the Basics</h2>
-                <p>Both index funds and ETFs allow you to invest in a diversified portfolio of stocks or bonds, but they work differently. Let's break down the key differences to help you choose what's best for your situation.</p>
-
-                <h2>What Are Index Funds?</h2>
-                <p>Index funds are mutual funds that track a specific market index like the S&P 500. You buy them directly from the fund company, and they're priced once per day after the market closes.</p>
-                <p><strong>Pros:</strong></p>
-                <ul>
-                    <li>Easy to buy - no need for a brokerage account</li>
-                    <li>Automatic investment options</li>
-                    <li>Can buy fractional shares</li>
-                    <li>Lower minimum investment requirements</li>
-                </ul>
-
-                <h2>What Are ETFs?</h2>
-                <p>Exchange-Traded Funds (ETFs) are similar to index funds but trade like stocks throughout the day on exchanges. You need a brokerage account to buy them.</p>
-                <p><strong>Pros:</strong></p>
-                <ul>
-                    <li>Lower expense ratios (usually)</li>
-                    <li>More flexible - can buy/sell anytime</li>
-                    <li>More variety and options</li>
-                    <li>Tax advantages in some cases</li>
-                </ul>
-
-                <h2>Cost Comparison</h2>
-                <div class="example-box">
-                    <h3>Real Example: Vanguard S&P 500</h3>
-                    <p><strong>Index Fund (VFINX):</strong> 0.14% expense ratio</p>
-                    <p><strong>ETF (VOO):</strong> 0.03% expense ratio</p>
-                    <p>On a $10,000 investment, that's $14 vs $3 per year in fees.</p>
-                </div>
-
-                <h2>Which Should Beginners Choose?</h2>
-                <p><strong>For Most Beginners: Index Funds</strong></p>
-                <ul>
-                    <li>Simpler to understand and buy</li>
-                    <li>Can set up automatic investments easily</li>
-                    <li>No need to worry about bid-ask spreads</li>
-                    <li>Can buy fractional shares with any amount</li>
-                </ul>
-
-                <p><strong>Consider ETFs If:</strong></p>
-                <ul>
-                    <li>You want the lowest possible fees</li>
-                    <li>You like having more trading flexibility</li>
-                    <li>You want access to more specialized funds</li>
-                    <li>You're comfortable with a brokerage account</li>
-                </ul>
-
-                <h2>Bottom Line</h2>
-                <p>For most beginners, the difference is minimal. The most important thing is to start investing, whether you choose index funds or ETFs. You can always switch later if your needs change.</p>
+                <p>Compound interest is the most powerful force in investing. Start early, invest regularly, and let time work its magic. Your future self will thank you!</p>
             `
         },
         'emergency-fund-calculator': {
             title: "Emergency Fund Calculator: Find Your Perfect Amount",
-            date: "January 3, 2024",
+            date: "January 12, 2024",
             readTime: "10 min read",
             category: "Emergency Fund",
             content: `
@@ -188,7 +86,7 @@ function openArticle(articleId) {
                 <p><strong>Conservative Emergency Fund:</strong> 12 months of essential expenses</p>
 
                 <h2>Calculate Your Essential Monthly Expenses</h2>
-                <div class="example-box">
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
                     <h3>Essential Expenses Include:</h3>
                     <ul>
                         <li>Housing (rent/mortgage, utilities, insurance)</li>
@@ -200,31 +98,20 @@ function openArticle(articleId) {
                     </ul>
                 </div>
 
-                <h2>Factors That Affect Your Needs</h2>
-                <p><strong>Job Security:</strong> If you work in a stable industry with low turnover, 3-4 months might be enough.</p>
-                <p><strong>Income Variability:</strong> Freelancers and commission-based workers should aim for 9-12 months.</p>
-                <p><strong>Family Situation:</strong> Single income households need more than dual income households.</p>
-                <p><strong>Health Status:</strong> Ongoing health issues might require a larger emergency fund.</p>
-
                 <h2>Real-World Examples</h2>
-                <div class="example-box">
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
                     <h3>Example 1: Single Person, Stable Job</h3>
                     <p>Monthly essential expenses: $2,000</p>
                     <p>Recommended emergency fund: $12,000 (6 months)</p>
                     <p>Target: $12,000 in a high-yield savings account</p>
                 </div>
 
-                <div class="example-box">
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
                     <h3>Example 2: Family with Kids, Single Income</h3>
                     <p>Monthly essential expenses: $4,500</p>
                     <p>Recommended emergency fund: $27,000 (6 months)</p>
                     <p>Target: $27,000 split between savings and money market accounts</p>
                 </div>
-
-                <h2>Where to Keep Your Emergency Fund</h2>
-                <p><strong>High-Yield Savings Account:</strong> Best for most people - FDIC insured and accessible</p>
-                <p><strong>Money Market Account:</strong> Higher returns, still accessible</p>
-                <p><strong>Multiple Accounts:</strong> Split between savings and money market for flexibility</p>
 
                 <h2>Building Your Fund Step-by-Step</h2>
                 <p><strong>Step 1:</strong> Save $1,000 as quickly as possible (mini-emergency fund)</p>
@@ -232,71 +119,235 @@ function openArticle(articleId) {
                 <p><strong>Step 3:</strong> Build to 3-6 months of expenses</p>
                 <p><strong>Step 4:</strong> Consider increasing to 9-12 months based on your risk factors</p>
 
-                <h2>When to Use Your Emergency Fund</h2>
-                <p>Use it for true emergencies: job loss, medical emergencies, urgent home or car repairs. Not for planned expenses or wants.</p>
-
                 <h2>Conclusion</h2>
                 <p>Your emergency fund size should match your personal situation. Use this guide to calculate your specific needs, then build it systematically. Remember, something is better than nothing - start today!</p>
             `
         },
-        'weekend-side-hustles': {
-            title: "Weekend Side Hustles That Actually Pay Well",
-            date: "January 5, 2024",
-            readTime: "8 min read",
-            category: "Income",
+        'investment-strategy-comparison': {
+            title: "The Ultimate Investment Strategy Comparison Guide",
+            date: "January 8, 2024",
+            readTime: "25 min read",
+            category: "Investment",
             content: `
-                <h2>Introduction</h2>
-                <p>Looking to make extra money on weekends without committing to a part-time job? These side hustles can earn you $500+ per month working just Saturdays and Sundays.</p>
+                <h2>Investment Strategy Overview</h2>
+                <p>This comprehensive guide compares 10 popular investment strategies, from conservative to aggressive, with real examples and expected returns.</p>
 
-                <h2>1. Freelance Writing ($50-100/hour)</h2>
-                <p><strong>What you need:</strong> Good writing skills, computer, internet connection</p>
-                <p><strong>Getting started:</strong> Create profiles on Upwork, Fiverr, or Contently</p>
-                <p><strong>Weekend potential:</strong> 4 hours Saturday = $200-400</p>
-                <p><strong>Best niches:</strong> Finance, technology, health, business</p>
+                <h2>1. Conservative Strategies</h2>
+                <h3>High-Yield Savings Accounts</h3>
+                <p><strong>Risk Level:</strong> Very Low</p>
+                <p><strong>Expected Return:</strong> 4-5% annually</p>
+                <p><strong>Best For:</strong> Emergency funds, short-term savings</p>
+                <p><strong>Pros:</strong> FDIC insured, liquid, no market risk</p>
+                <p><strong>Cons:</strong> May not keep up with inflation</p>
 
-                <h2>2. Tutoring ($30-60/hour)</h2>
-                <p><strong>What you need:</strong> Expertise in a subject, patience</p>
-                <p><strong>Getting started:</strong> Sign up on Wyzant, Tutor.com, or advertise locally</p>
-                <p><strong>Weekend potential:</strong> 4 hours total = $120-240</p>
-                <p><strong>Popular subjects:</strong> Math, science, test prep, music lessons</p>
+                <h3>Certificates of Deposit (CDs)</h3>
+                <p><strong>Risk Level:</strong> Very Low</p>
+                <p><strong>Expected Return:</strong> 4-5% annually</p>
+                <p><strong>Best For:</strong> Money needed in 1-5 years</p>
+                <p><strong>Pros:</strong> Guaranteed returns, FDIC insured</p>
+                <p><strong>Cons:</strong> Money locked up for term, early withdrawal penalties</p>
 
-                <h2>3. Handyman Services ($40-80/hour)</h2>
-                <p><strong>What you need:</strong> Basic tools, home repair skills</p>
-                <p><strong>Getting started:</strong> Create TaskRabbit profile, advertise on Nextdoor</p>
-                <p><strong>Weekend potential:</strong> 6 hours total = $240-480</p>
-                <p><strong>Popular services:</strong> Furniture assembly, minor repairs, mounting</p>
+                <h2>2. Moderate Strategies</h2>
+                <h3>Bond Index Funds</h3>
+                <p><strong>Risk Level:</strong> Low to Moderate</p>
+                <p><strong>Expected Return:</strong> 5-7% annually</p>
+                <p><strong>Best For:</strong> Conservative investors, portfolio diversification</p>
+                <p><strong>Pros:</strong> Diversified, low fees, regular income</p>
+                <p><strong>Cons:</strong> Interest rate risk, lower growth potential</p>
 
-                <h2>4. Photography ($100-300/session)</h2>
-                <p><strong>What you need:</strong> Decent camera, photography skills</p>
-                <p><strong>Getting started:</strong> Build portfolio, advertise on social media</p>
-                <p><strong>Weekend potential:</strong> 2 sessions = $200-600</p>
-                <p><strong>Popular types:</strong> Family portraits, events, real estate</p>
+                <h3>Balanced Portfolio (60/40)</h3>
+                <p><strong>Risk Level:</strong> Moderate</p>
+                <p><strong>Expected Return:</strong> 7-9% annually</p>
+                <p><strong>Best For:</strong> Most investors seeking growth with some stability</p>
+                <p><strong>Pros:</strong> Good balance of growth and stability</p>
+                <p><strong>Cons:</strong> May underperform in strong bull markets</p>
 
-                <h2>5. Virtual Assistant ($25-50/hour)</h2>
-                <p><strong>What you need:</strong> Computer, organizational skills</p>
-                <p><strong>Getting started:</strong> Join Belay, Time Etc, or freelance platforms</p>
-                <p><strong>Weekend potential:</strong> 5 hours total = $125-250</p>
-                <p><strong>Common tasks:</strong> Email management, scheduling, research</p>
+                <h2>3. Growth Strategies</h2>
+                <h3>Total Stock Market Index Funds</h3>
+                <p><strong>Risk Level:</strong> Moderate to High</p>
+                <p><strong>Expected Return:</strong> 8-10% annually</p>
+                <p><strong>Best For:</strong> Long-term investors (10+ years)</p>
+                <p><strong>Pros:</strong> Broad diversification, low costs, proven track record</p>
+                <p><strong>Cons:</strong> Market volatility, requires long time horizon</p>
 
-                <h2>Success Tips</h2>
-                <p><strong>Start Small:</strong> Begin with 2-3 hours per weekend and scale up</p>
-                <p><strong>Track Everything:</strong> Keep detailed records of income and expenses</p>
-                <p><strong>Build Reputation:</strong> Focus on quality work to get repeat clients</p>
-                <p><strong>Set Boundaries:</strong> Don't let side hustles interfere with main job</p>
-
-                <h2>Making $500+ Per Month</h2>
-                <p>Combine 2-3 of these hustles:</p>
-                <ul>
-                    <li>Weekend 1: 4 hours writing ($200) + 2 hours tutoring ($80) = $280</li>
-                    <li>Weekend 2: 6 hours handyman work ($360) = $360</li>
-                    <li>Average: $320 per weekend × 4 weekends = $1,280 per month</li>
-                </ul>
-
-                <h2>Tax Considerations</h2>
-                <p>Track all income and expenses. Set aside 25-30% for taxes. Consider forming an LLC once you're making consistent money.</p>
+                <h3>Growth Stock Strategy</h3>
+                <p><strong>Risk Level:</strong> High</p>
+                <p><strong>Expected Return:</strong> 10-12% annually</p>
+                <p><strong>Best For:</strong> Young investors with high risk tolerance</p>
+                <p><strong>Pros:</strong> Higher growth potential, exciting companies</p>
+                <p><strong>Cons:</strong> Higher volatility, potential for bigger losses</p>
 
                 <h2>Conclusion</h2>
-                <p>The key is choosing something that fits your skills and schedule. Start with one hustle, master it, then add others. Weekend work can quickly become significant income!</p>
+                <p>Choose a strategy that matches your risk tolerance, time horizon, and financial goals. Most investors benefit from starting with broad index funds and gradually adding complexity as they learn more.</p>
+            `
+        },
+        'credit-score-guide': {
+            title: "Credit Score 101: Everything You Need to Know",
+            date: "January 5, 2024",
+            readTime: "20 min read",
+            category: "Credit",
+            content: `
+                <h2>Understanding Credit Scores</h2>
+                <p>Your credit score is a three-digit number (300-850) that represents your creditworthiness. Lenders use it to decide whether to give you loans and what interest rates to charge.</p>
+
+                <h2>How Credit Scores Are Calculated</h2>
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
+                    <h3>Credit Score Factors:</h3>
+                    <ul>
+                        <li><strong>Payment History (35%):</strong> Paying bills on time</li>
+                        <li><strong>Credit Utilization (30%):</strong> How much of your available credit you use</li>
+                        <li><strong>Length of Credit History (15%):</strong> How long you've had credit</li>
+                        <li><strong>Credit Mix (10%):</strong> Different types of credit accounts</li>
+                        <li><strong>New Credit (10%):</strong> Recent credit applications</li>
+                    </ul>
+                </div>
+
+                <h2>Credit Score Ranges</h2>
+                <p><strong>300-579:</strong> Poor - May have difficulty getting credit</p>
+                <p><strong>580-669:</strong> Fair - Below average, higher interest rates</p>
+                <p><strong>670-739:</strong> Good - Most lenders will approve you</p>
+                <p><strong>740-799:</strong> Very Good - Above average, better interest rates</p>
+                <p><strong>800-850:</strong> Excellent - Best interest rates and terms</p>
+
+                <h2>How to Build Good Credit</h2>
+                <p><strong>1. Pay Bills on Time:</strong> Set up automatic payments to never miss a due date</p>
+                <p><strong>2. Keep Credit Utilization Low:</strong> Use less than 30% of your available credit</p>
+                <p><strong>3. Don't Close Old Accounts:</strong> Length of credit history matters</p>
+                <p><strong>4. Limit New Applications:</strong> Too many hard inquiries can hurt your score</p>
+                <p><strong>5. Monitor Your Credit:</strong> Check your credit report regularly for errors</p>
+
+                <h2>Common Credit Mistakes to Avoid</h2>
+                <p><strong>Maxing out credit cards:</strong> Keep utilization below 30%</p>
+                <p><strong>Missing payments:</strong> Even one late payment can significantly hurt your score</p>
+                <p><strong>Closing old accounts:</strong> This can shorten your credit history</p>
+                <p><strong>Applying for too much credit at once:</strong> Space out applications</p>
+
+                <h2>Timeline for Improvement</h2>
+                <p><strong>1-3 months:</strong> Pay down credit cards, dispute errors</p>
+                <p><strong>6 months:</strong> Consistent on-time payments show improvement</p>
+                <p><strong>12+ months:</strong> Significant improvement with good habits</p>
+
+                <h2>Conclusion</h2>
+                <p>Building good credit takes time and consistent habits. Start with the basics - pay on time and keep utilization low - and you'll see steady improvement.</p>
+            `
+        },
+        'retirement-planning-guide': {
+            title: "Retirement Planning: Are You Saving Enough?",
+            date: "January 2, 2024",
+            readTime: "30 min read",
+            category: "Retirement",
+            content: `
+                <h2>Why Retirement Planning Matters</h2>
+                <p>Social Security alone won't provide the retirement lifestyle you want. You need to save and invest to maintain your standard of living in retirement.</p>
+
+                <h2>How Much Do You Need?</h2>
+                <p><strong>Rule of Thumb:</strong> Save 15% of your gross income for retirement</p>
+                <p><strong>4% Rule:</strong> You can safely withdraw 4% of your retirement savings each year</p>
+                <p><strong>Target Amount:</strong> Save 25 times your annual expenses</p>
+
+                <h2>Retirement Savings by Age</h2>
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
+                    <h3>Savings Targets:</h3>
+                    <ul>
+                        <li><strong>Age 30:</strong> 1x your annual salary</li>
+                        <li><strong>Age 40:</strong> 3x your annual salary</li>
+                        <li><strong>Age 50:</strong> 5x your annual salary</li>
+                        <li><strong>Age 60:</strong> 7x your annual salary</li>
+                        <li><strong>Age 67:</strong> 8x your annual salary</li>
+                    </ul>
+                </div>
+
+                <h2>Types of Retirement Accounts</h2>
+                <p><strong>401(k):</strong> Employer-sponsored plan, often with matching contributions</p>
+                <p><strong>Traditional IRA:</strong> Tax-deductible contributions, taxed on withdrawal</p>
+                <p><strong>Roth IRA:</strong> After-tax contributions, tax-free withdrawals</p>
+                <p><strong>HSA:</strong> Triple tax advantage for medical expenses</p>
+
+                <h2>Investment Strategy by Age</h2>
+                <p><strong>20s-30s:</strong> 90-100% stocks, 0-10% bonds (aggressive growth)</p>
+                <p><strong>40s-50s:</strong> 70-80% stocks, 20-30% bonds (moderate growth)</p>
+                <p><strong>60s+:</strong> 50-60% stocks, 40-50% bonds (preservation)</p>
+
+                <h2>Common Mistakes</h2>
+                <p><strong>Not starting early enough:</strong> Time is your biggest asset</p>
+                <p><strong>Not maximizing employer match:</strong> Free money you're leaving on the table</p>
+                <p><strong>Being too conservative:</strong> You need growth to beat inflation</p>
+                <p><strong>Not increasing contributions:</strong> Increase savings as income grows</p>
+
+                <h2>Action Steps</h2>
+                <p><strong>1. Start Today:</strong> Even $50 per month is better than nothing</p>
+                <p><strong>2. Get Employer Match:</strong> Contribute enough to get full match</p>
+                <p><strong>3. Increase Contributions:</strong> Raise contribution rate by 1% each year</p>
+                <p><strong>4. Diversify:</strong> Use low-cost index funds for broad market exposure</p>
+                <p><strong>5. Stay Consistent:</strong> Don't stop investing during market downturns</p>
+
+                <h2>Conclusion</h2>
+                <p>The best time to start planning for retirement was yesterday. The second best time is today. Start small, be consistent, and increase contributions over time.</p>
+            `
+        },
+        'tax-planning-young-professionals': {
+            title: "Tax Planning Strategies for Young Professionals",
+            date: "December 28, 2023",
+            readTime: "18 min read",
+            category: "Taxes",
+            content: `
+                <h2>Why Tax Planning Matters</h2>
+                <p>Tax planning isn't just for the wealthy. Young professionals can save thousands each year with proper planning and strategy.</p>
+
+                <h2>Maximize Retirement Contributions</h2>
+                <p><strong>401(k) Contributions:</strong> Reduce taxable income by contributing to employer 401(k)</p>
+                <p><strong>Traditional IRA:</strong> Deductible contributions up to $6,500 (2024 limit)</p>
+                <p><strong>Roth IRA:</strong> After-tax contributions, tax-free growth and withdrawals</p>
+                <p><strong>HSA Contributions:</strong> Triple tax advantage for medical expenses</p>
+
+                <h2>Take Advantage of Tax Credits</h2>
+                <p><strong>Saver's Credit:</strong> Up to $1,000 credit for retirement contributions</p>
+                <p><strong>Lifetime Learning Credit:</strong> Up to $2,000 for education expenses</p>
+                <p><strong>Earned Income Credit:</strong> For lower-income workers</p>
+
+                <h2>Optimize Your Withholding</h2>
+                <p><strong>Check Your W-4:</strong> Adjust withholding to avoid large refunds or bills</p>
+                <p><strong>Quarterly Payments:</strong> Make estimated payments if you have side income</p>
+                <p><strong>Track Expenses:</strong> Keep detailed records of deductible expenses</p>
+
+                <h2>Deductible Expenses for Young Professionals</h2>
+                <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 1px solid var(--border-color);">
+                    <h3>Common Deductions:</h3>
+                    <ul>
+                        <li>Student loan interest (up to $2,500)</li>
+                        <li>Moving expenses for first job</li>
+                        <li>Professional development courses</li>
+                        <li>Work-related expenses (if not reimbursed)</li>
+                        <li>Charitable donations</li>
+                        <li>Health expenses above 7.5% of income</li>
+                    </ul>
+                </div>
+
+                <h2>Side Hustle Tax Tips</h2>
+                <p><strong>Track All Income:</strong> Report all income, including cash payments</p>
+                <p><strong>Business Expenses:</strong> Deduct legitimate business expenses</p>
+                <p><strong>Home Office:</strong> Deduct portion of rent, utilities if you work from home</p>
+                <p><strong>Mileage:</strong> Track business miles for deduction</p>
+
+                <h2>Year-Round Tax Calendar</h2>
+                <p><strong>January:</strong> Organize tax documents, review W-4</p>
+                <p><strong>March:</strong> Make prior year IRA contributions</p>
+                <p><strong>April:</strong> File taxes, make Q1 estimated payments</p>
+                <p><strong>June:</strong> Make Q2 estimated payments</p>
+                <p><strong>September:</strong> Make Q3 estimated payments</p>
+                <p><strong>December:</strong> Tax loss harvesting, maximize retirement contributions</p>
+
+                <h2>Common Mistakes to Avoid</h2>
+                <p><strong>Not keeping receipts:</strong> Always keep documentation</p>
+                <p><strong>Forgetting side income:</strong> All income must be reported</p>
+                <p><strong>Missing deadlines:</strong> File and pay on time to avoid penalties</p>
+                <p><strong>Not planning ahead:</strong> Tax planning should be year-round</p>
+
+                <h2>When to Hire a Professional</h2>
+                <p><strong>Consider a CPA if:</strong> You have side business income, multiple income sources, or complex investments</p>
+
+                <h2>Conclusion</h2>
+                <p>Smart tax planning can save you thousands each year. Start with the basics, keep good records, and consider professional help as your situation becomes more complex.</p>
             `
         }
     };
@@ -328,18 +379,14 @@ function openArticle(articleId) {
     const article = articles[articleId];
 
     if (article) {
-        // Fill modal with article content
         document.getElementById('modalTitle').textContent = article.title;
         document.getElementById('modalCategory').textContent = article.category;
         document.getElementById('modalDate').textContent = article.date;
         document.getElementById('modalReadTime').textContent = article.readTime;
         document.getElementById('modalContent').innerHTML = article.content;
         
-        // Show modal
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        
-        // Scroll to top of modal
+        document.body.style.overflow = 'hidden';
         modal.scrollTop = 0;
     }
 }
@@ -347,7 +394,7 @@ function openArticle(articleId) {
 function closeArticle() {
     const modal = document.getElementById('articleModal');
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restore scrolling
+    document.body.style.overflow = 'auto';
 }
 
 // Close modal when clicking outside
@@ -364,12 +411,3 @@ document.addEventListener('keydown', function(event) {
         closeArticle();
     }
 });
-
-// Make all article buttons work the same way
-function openStory(storyId) {
-    openArticle(storyId); // Stories use same system
-}
-
-function openEducationalArticle(articleId) {
-    openArticle(articleId); // Educational articles use same system
-}
