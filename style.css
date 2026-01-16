@@ -1058,3 +1058,169 @@ body {
 }
 
 /* Add the rest of your dark theme styles here... */
+/* ===== ARTICLE STYLES ===== */
+.articles-section,
+.educational-articles {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.articles-grid,
+.stories-grid,
+.articles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.article-card,
+.story-card,
+.edu-article {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.article-card:hover,
+.story-card:hover,
+.edu-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.article-image,
+.story-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.article-image i,
+.story-header i {
+    font-size: 3rem;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+
+.article-meta,
+.story-highlights,
+.article-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.story-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.highlight .number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+}
+
+.highlight .label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.story-quote {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-primary);
+}
+
+.story-quote cite {
+    display: block;
+    text-align: right;
+    margin-top: 1rem;
+    font-style: normal;
+    color: var(--accent-secondary);
+}
+
+.story-timeline {
+    margin: 1rem 0;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.month {
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.article-tags {
+    margin: 1rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* Button Styles */
+.read-more-btn,
+.read-story-btn,
+.start-reading-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.read-more-btn:hover,
+.read-story-btn:hover,
+.start-reading-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.featured {
+    border: 2px solid var(--accent-primary);
+    position: relative;
+}
+
+.featured::before {
+    content: 'FEATURED';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--accent-primary);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
