@@ -352,4 +352,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add any additional initialization code here
     // For example, loading dynamic content, setting up analytics, etc.
 });
+// ===== ARTICLE FUNCTIONS =====
+function openArticle(articleId) {
+    // For now, show article content in alert
+    const articles = {
+        'budget-mistakes': {
+            title: "5 Budgeting Mistakes That Cost You Money",
+            content: "Full article: Learn about the 5 most common budgeting mistakes including not tracking small expenses, setting unrealistic goals, and more..."
+        },
+        '5-dollar-challenge': {
+            title: "The $5 Challenge That Builds Your Emergency Fund",
+            content: "Full article: Every time you get a $5 bill as change, save it instead of spending it. This simple habit can build you $1,800 per year..."
+        },
+        'sarah-debt-journey': {
+            title: "From $50K Debt to Financial Freedom in 3 Years",
+            content: "Full story: Sarah used the debt avalanche method, increased her income through side hustles, and automated her savings to become debt-free..."
+        }
+    };
+    
+    const article = articles[articleId];
+    if (article) {
+        alert(`${article.title}\n\n${article.content}\n\nNote: In a full implementation, this would open a dedicated article page.`);
+    }
+}
+
+function openStory(storyId) {
+    openArticle(storyId); // Same function for now
+}
+
+function openEducationalArticle(articleId) {
+    openArticle(articleId); // Same function for now
+}
 
