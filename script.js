@@ -1,71 +1,12 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
+// ===== MOBILE NAVIGATION =====
+function toggleMobileMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Active navigation link highlighting
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Expandable content toggle
-function toggleContent(button) {
-    const card = button.closest('.content-card');
-    const expandableContent = card.querySelector('.expandable-content');
-    
-    if (expandableContent.classList.contains('active')) {
-        expandableContent.classList.remove('active');
-        button.textContent = 'Read More';
-    } else {
-        expandableContent.classList.add('active');
-        button.textContent = 'Read Less';
-    }
 }
 
-// Accordion functionality for learning cards
+// ===== ACCORDION FUNCTIONALITY =====
 function toggleAccordion(button) {
     const accordion = button.closest('.accordion');
     const content = accordion.querySelector('.accordion-content');
@@ -84,277 +25,24 @@ function toggleAccordion(button) {
     }
 }
 
-// Page load animations
-window.addEventListener('load', () => {
-    // Animate hero section
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(30px)';
-        
-        setTimeout(() => {
-            heroContent.style.transition = 'all 1s ease';
-            heroContent.style.opacity = '1';
-            heroContent.style.transform = 'translateY(0)';
-        }, 300);
-    }
-
-    // Animate cards on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all cards
-    const cards = document.querySelectorAll('.summary-card, .article-card, .content-card, .learning-card, .value-card');
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s ease';
-        observer.observe(card);
-    });
-});
-
-// Add hover effects to cards
-const cards = document.querySelectorAll('.summary-card, .article-card, .content-card, .learning-card, .value-card');
-cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px) scale(1.02)';
-    });
+// ===== EXPANDABLE CONTENT =====
+function toggleContent(button) {
+    const card = button.closest('.content-card');
+    const expandableContent = card.querySelector('.expandable-content');
     
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Form validation (if forms are added later)
-function validateForm(form) {
-    const inputs = form.querySelectorAll('input[required], textarea[required]');
-    let isValid = true;
-
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            input.classList.add('error');
-            isValid = false;
-        } else {
-            input.classList.remove('error');
-        }
-    });
-
-    return isValid;
-}
-
-// Add error styling
-const style = document.createElement('style');
-style.textContent = `
-    .error {
-        border-color: var(--accent-secondary) !important;
-        box-shadow: 0 0 5px rgba(255, 107, 107, 0.3) !important;
-    }
-`;
-document.head.appendChild(style);
-
-// Utility function for debouncing
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Responsive navigation background
-window.addEventListener('scroll', debounce(() => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+    if (expandableContent.classList.contains('active')) {
+        expandableContent.classList.remove('active');
+        button.textContent = 'Read More';
     } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+        expandableContent.classList.add('active');
+        button.textContent = 'Read Less';
     }
-}, 10));
-
-// Add loading animation to buttons
-const buttons = document.querySelectorAll('.btn');
-buttons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-        
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
-
-// Add ripple effect styles
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    .btn {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
-        pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(rippleStyle);
-
-// Social media link tracking
-const socialLinks = document.querySelectorAll('.social-link, .footer-social a');
-socialLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const platform = link.classList.contains('youtube') ? 'YouTube' : 
-                        link.classList.contains('facebook') ? 'Facebook' : 
-                        link.classList.contains('instagram') ? 'Instagram' : 'Social Media';
-        
-        // In a real application, you would track this analytics event
-        console.log(`User clicked ${platform} link`);
-        
-        // Simulate opening social media (replace with actual URLs)
-        alert(`Opening ${platform} page (this is a demo)`);
-    });
-});
-
-// Print functionality for learning materials
-function printContent() {
-    window.print();
 }
 
-// Add print button to learning pages
-const learnPages = document.querySelector('.learning-topics');
-if (learnPages) {
-    const printBtn = document.createElement('button');
-    printBtn.textContent = 'Print Learning Materials';
-    printBtn.className = 'btn btn-secondary';
-    printBtn.style.position = 'fixed';
-    printBtn.style.bottom = '20px';
-    printBtn.style.right = '20px';
-    printBtn.style.zIndex = '1000';
-    printBtn.onclick = printContent;
-    document.body.appendChild(printBtn);
-}
-
-// Dark mode toggle (if needed for future enhancement)
-function toggleDarkMode() {
-    document.body.classList.toggle('light-mode');
-    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-}
-
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-}
-
-// Error handling for failed content loading
-window.addEventListener('error', (e) => {
-    if (e.target.tagName === 'IFRAME') {
-        const iframe = e.target;
-        const fallback = document.createElement('div');
-        fallback.className = 'video-fallback';
-        fallback.innerHTML = `
-            <i class="fas fa-exclamation-triangle" style="color: var(--accent-secondary); font-size: 2rem;"></i>
-            <p>Video could not be loaded. Please check your internet connection.</p>
-        `;
-        fallback.style.textAlign = 'center';
-        fallback.style.padding = '2rem';
-        fallback.style.background = 'var(--bg-secondary)';
-        fallback.style.borderRadius = '10px';
-        iframe.parentNode.replaceChild(fallback, iframe);
-    }
-});
-
-// Performance optimization: Lazy load images (if images are added)
-const lazyImages = document.querySelectorAll('img[data-src]');
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-            imageObserver.unobserve(img);
-        }
-    });
-});
-
-lazyImages.forEach(img => imageObserver.observe(img));
-
-// Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // ESC key to close mobile menu
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
-    
-    // Arrow keys for accordion navigation
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-        const focusedElement = document.activeElement;
-        if (focusedElement.classList.contains('accordion-btn')) {
-            e.preventDefault();
-            const accordions = Array.from(document.querySelectorAll('.accordion-btn'));
-            const currentIndex = accordions.indexOf(focusedElement);
-            let nextIndex;
-            
-            if (e.key === 'ArrowDown') {
-                nextIndex = (currentIndex + 1) % accordions.length;
-            } else {
-                nextIndex = (currentIndex - 1 + accordions.length) % accordions.length;
-            }
-            
-            accordions[nextIndex].focus();
-        }
-    }
-});
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Mind Wallet initialized successfully!');
-    
-    // Add any additional initialization code here
-    // For example, loading dynamic content, setting up analytics, etc.
-});
-// ===== ARTICLE FUNCTIONS - MODAL VERSION =====
+// ===== ARTICLE MODAL SYSTEM =====
 function openArticle(articleId) {
     const articles = {
+        // === CONTENTS PAGE ARTICLES ===
         'budget-mistakes': {
             title: "5 Budgeting Mistakes That Cost You Money",
             date: "January 15, 2024",
@@ -427,88 +115,212 @@ function openArticle(articleId) {
                 <p>The $5 challenge is perfect for people who struggle with traditional saving methods. It's simple, painless, and effective. Start today and watch your emergency fund grow!</p>
             `
         },
-        'sarah-debt-journey': {
-            title: "From $50K Debt to Financial Freedom in 3 Years",
+        'index-vs-etfs': {
+            title: "Index Funds vs ETFs: Which is Better for Beginners?",
             date: "January 10, 2024",
-            readTime: "8 min read",
-            category: "Success Story",
+            readTime: "7 min read",
+            category: "Investment",
             content: `
-                <h2>Sarah's Starting Point</h2>
-                <p>In January 2021, Sarah was 29 years old with $48,000 in debt - a mix of credit cards, student loans, and a car loan. She was making minimum payments but felt like she was drowning.</p>
-                <p>"I was paying $800 per month in minimum payments but barely making a dent," Sarah recalls. "I knew something had to change."</p>
+                <h2>Understanding the Basics</h2>
+                <p>Both index funds and ETFs allow you to invest in a diversified portfolio of stocks or bonds, but they work differently. Let's break down the key differences to help you choose what's best for your situation.</p>
 
-                <h2>The Turning Point</h2>
-                <p>Sarah's wake-up call came when she was denied a mortgage because her debt-to-income ratio was too high. "That's when I realized my debt was literally preventing me from achieving my dreams."</p>
+                <h2>What Are Index Funds?</h2>
+                <p>Index funds are mutual funds that track a specific market index like the S&P 500. You buy them directly from the fund company, and they're priced once per day after the market closes.</p>
+                <p><strong>Pros:</strong></p>
+                <ul>
+                    <li>Easy to buy - no need for a brokerage account</li>
+                    <li>Automatic investment options</li>
+                    <li>Can buy fractional shares</li>
+                    <li>Lower minimum investment requirements</li>
+                </ul>
 
-                <h2>Her Strategy</h2>
-                <p><strong>1. The Debt Avalanche Method:</strong> Sarah listed all her debts from highest to lowest interest rate and focused extra payments on the highest interest debt first.</p>
-                <p><strong>2. Side Income:</strong> She started freelance writing on weekends, earning an extra $800 per month.</p>
-                <p><strong>3. Lifestyle Changes:</strong> She moved to a cheaper apartment, sold her car, and got a roommate to cut expenses.</p>
-                <p><strong>4. Automation:</strong> She automated all debt payments and savings to remove temptation.</p>
+                <h2>What Are ETFs?</h2>
+                <p>Exchange-Traded Funds (ETFs) are similar to index funds but trade like stocks throughout the day on exchanges. You need a brokerage account to buy them.</p>
+                <p><strong>Pros:</strong></p>
+                <ul>
+                    <li>Lower expense ratios (usually)</li>
+                    <li>More flexible - can buy/sell anytime</li>
+                    <li>More variety and options</li>
+                    <li>Tax advantages in some cases</li>
+                </ul>
 
-                <h2>The Numbers</h2>
-                <div class="story-highlights">
-                    <div class="highlight">
-                        <span class="number">$48,000</span>
-                        <span class="label">Starting Debt</span>
-                    </div>
-                    <div class="highlight">
-                        <span class="number">36</span>
-                        <span class="label">Months</span>
-                    </div>
-                    <div class="highlight">
-                        <span class="number">$125K</span>
-                        <span class="label">Current Net Worth</span>
-                    </div>
+                <h2>Cost Comparison</h2>
+                <div class="example-box">
+                    <h3>Real Example: Vanguard S&P 500</h3>
+                    <p><strong>Index Fund (VFINX):</strong> 0.14% expense ratio</p>
+                    <p><strong>ETF (VOO):</strong> 0.03% expense ratio</p>
+                    <p>On a $10,000 investment, that's $14 vs $3 per year in fees.</p>
                 </div>
 
-                <h2>Monthly Breakdown</h2>
-                <p><strong>Year 1:</strong> Paid off $18,000 - mostly high-interest credit cards</p>
-                <p><strong>Year 2:</strong> Paid off $20,000 - student loans and car loan</p>
-                <p><strong>Year 3:</strong> Paid off $10,000 - remaining debts and started investing</p>
-
-                <h2>Her Advice</h2>
-                <p>"Don't try to do everything at once. Pick one debt, focus on it, then move to the next. Celebrate small wins along the way."</p>
-                <p>"Find ways to increase your income. Cutting expenses helps, but earning more changes everything."</p>
-
-                <h2>Life After Debt</h2>
-                <p>Today, Sarah is debt-free with a six-figure investment portfolio. She's on track to retire early and volunteers to help others with debt management.</p>
-                <p>"The best part isn't the money - it's the freedom. I no longer stress about bills or feel trapped by my past decisions."</p>
-
-                <h2>Key Takeaways</h2>
+                <h2>Which Should Beginners Choose?</h2>
+                <p><strong>For Most Beginners: Index Funds</strong></p>
                 <ul>
-                    <li>Pick a debt payoff method and stick to it</li>
-                    <li>Increasing income accelerates debt payoff significantly</li>
-                    <li>Automate everything to remove temptation</li>
-                    <li>Celebrate milestones to stay motivated</li>
-                    <li>The journey is temporary, but the freedom is permanent</li>
+                    <li>Simpler to understand and buy</li>
+                    <li>Can set up automatic investments easily</li>
+                    <li>No need to worry about bid-ask spreads</li>
+                    <li>Can buy fractional shares with any amount</li>
                 </ul>
+
+                <p><strong>Consider ETFs If:</strong></p>
+                <ul>
+                    <li>You want the lowest possible fees</li>
+                    <li>You like having more trading flexibility</li>
+                    <li>You want access to more specialized funds</li>
+                    <li>You're comfortable with a brokerage account</li>
+                </ul>
+
+                <h2>Bottom Line</h2>
+                <p>For most beginners, the difference is minimal. The most important thing is to start investing, whether you choose index funds or ETFs. You can always switch later if your needs change.</p>
+            `
+        },
+        'emergency-fund-calculator': {
+            title: "Emergency Fund Calculator: Find Your Perfect Amount",
+            date: "January 3, 2024",
+            readTime: "10 min read",
+            category: "Emergency Fund",
+            content: `
+                <h2>Why Emergency Fund Size Matters</h2>
+                <p>Too little and you're vulnerable to financial shocks. Too much and you're missing out on investment returns. This guide will help you find the perfect emergency fund size for your situation.</p>
+
+                <h2>The Basic Formula</h2>
+                <p><strong>Minimum Emergency Fund:</strong> 3 months of essential expenses</p>
+                <p><strong>Recommended Emergency Fund:</strong> 6 months of essential expenses</p>
+                <p><strong>Conservative Emergency Fund:</strong> 12 months of essential expenses</p>
+
+                <h2>Calculate Your Essential Monthly Expenses</h2>
+                <div class="example-box">
+                    <h3>Essential Expenses Include:</h3>
+                    <ul>
+                        <li>Housing (rent/mortgage, utilities, insurance)</li>
+                        <li>Food and groceries</li>
+                        <li>Transportation</li>
+                        <li>Health insurance and medical expenses</li>
+                        <li>Minimum debt payments</li>
+                        <li>Basic phone and internet</li>
+                    </ul>
+                </div>
+
+                <h2>Factors That Affect Your Needs</h2>
+                <p><strong>Job Security:</strong> If you work in a stable industry with low turnover, 3-4 months might be enough.</p>
+                <p><strong>Income Variability:</strong> Freelancers and commission-based workers should aim for 9-12 months.</p>
+                <p><strong>Family Situation:</strong> Single income households need more than dual income households.</p>
+                <p><strong>Health Status:</strong> Ongoing health issues might require a larger emergency fund.</p>
+
+                <h2>Real-World Examples</h2>
+                <div class="example-box">
+                    <h3>Example 1: Single Person, Stable Job</h3>
+                    <p>Monthly essential expenses: $2,000</p>
+                    <p>Recommended emergency fund: $12,000 (6 months)</p>
+                    <p>Target: $12,000 in a high-yield savings account</p>
+                </div>
+
+                <div class="example-box">
+                    <h3>Example 2: Family with Kids, Single Income</h3>
+                    <p>Monthly essential expenses: $4,500</p>
+                    <p>Recommended emergency fund: $27,000 (6 months)</p>
+                    <p>Target: $27,000 split between savings and money market accounts</p>
+                </div>
+
+                <h2>Where to Keep Your Emergency Fund</h2>
+                <p><strong>High-Yield Savings Account:</strong> Best for most people - FDIC insured and accessible</p>
+                <p><strong>Money Market Account:</strong> Higher returns, still accessible</p>
+                <p><strong>Multiple Accounts:</strong> Split between savings and money market for flexibility</p>
+
+                <h2>Building Your Fund Step-by-Step</h2>
+                <p><strong>Step 1:</strong> Save $1,000 as quickly as possible (mini-emergency fund)</p>
+                <p><strong>Step 2:</strong> Pay off high-interest debt while maintaining the $1,000</p>
+                <p><strong>Step 3:</strong> Build to 3-6 months of expenses</p>
+                <p><strong>Step 4:</strong> Consider increasing to 9-12 months based on your risk factors</p>
+
+                <h2>When to Use Your Emergency Fund</h2>
+                <p>Use it for true emergencies: job loss, medical emergencies, urgent home or car repairs. Not for planned expenses or wants.</p>
+
+                <h2>Conclusion</h2>
+                <p>Your emergency fund size should match your personal situation. Use this guide to calculate your specific needs, then build it systematically. Remember, something is better than nothing - start today!</p>
+            `
+        },
+        'weekend-side-hustles': {
+            title: "Weekend Side Hustles That Actually Pay Well",
+            date: "January 5, 2024",
+            readTime: "8 min read",
+            category: "Income",
+            content: `
+                <h2>Introduction</h2>
+                <p>Looking to make extra money on weekends without committing to a part-time job? These side hustles can earn you $500+ per month working just Saturdays and Sundays.</p>
+
+                <h2>1. Freelance Writing ($50-100/hour)</h2>
+                <p><strong>What you need:</strong> Good writing skills, computer, internet connection</p>
+                <p><strong>Getting started:</strong> Create profiles on Upwork, Fiverr, or Contently</p>
+                <p><strong>Weekend potential:</strong> 4 hours Saturday = $200-400</p>
+                <p><strong>Best niches:</strong> Finance, technology, health, business</p>
+
+                <h2>2. Tutoring ($30-60/hour)</h2>
+                <p><strong>What you need:</strong> Expertise in a subject, patience</p>
+                <p><strong>Getting started:</strong> Sign up on Wyzant, Tutor.com, or advertise locally</p>
+                <p><strong>Weekend potential:</strong> 4 hours total = $120-240</p>
+                <p><strong>Popular subjects:</strong> Math, science, test prep, music lessons</p>
+
+                <h2>3. Handyman Services ($40-80/hour)</h2>
+                <p><strong>What you need:</strong> Basic tools, home repair skills</p>
+                <p><strong>Getting started:</strong> Create TaskRabbit profile, advertise on Nextdoor</p>
+                <p><strong>Weekend potential:</strong> 6 hours total = $240-480</p>
+                <p><strong>Popular services:</strong> Furniture assembly, minor repairs, mounting</p>
+
+                <h2>4. Photography ($100-300/session)</h2>
+                <p><strong>What you need:</strong> Decent camera, photography skills</p>
+                <p><strong>Getting started:</strong> Build portfolio, advertise on social media</p>
+                <p><strong>Weekend potential:</strong> 2 sessions = $200-600</p>
+                <p><strong>Popular types:</strong> Family portraits, events, real estate</p>
+
+                <h2>5. Virtual Assistant ($25-50/hour)</h2>
+                <p><strong>What you need:</strong> Computer, organizational skills</p>
+                <p><strong>Getting started:</strong> Join Belay, Time Etc, or freelance platforms</p>
+                <p><strong>Weekend potential:</strong> 5 hours total = $125-250</p>
+                <p><strong>Common tasks:</strong> Email management, scheduling, research</p>
+
+                <h2>Success Tips</h2>
+                <p><strong>Start Small:</strong> Begin with 2-3 hours per weekend and scale up</p>
+                <p><strong>Track Everything:</strong> Keep detailed records of income and expenses</p>
+                <p><strong>Build Reputation:</strong> Focus on quality work to get repeat clients</p>
+                <p><strong>Set Boundaries:</strong> Don't let side hustles interfere with main job</p>
+
+                <h2>Making $500+ Per Month</h2>
+                <p>Combine 2-3 of these hustles:</p>
+                <ul>
+                    <li>Weekend 1: 4 hours writing ($200) + 2 hours tutoring ($80) = $280</li>
+                    <li>Weekend 2: 6 hours handyman work ($360) = $360</li>
+                    <li>Average: $320 per weekend × 4 weekends = $1,280 per month</li>
+                </ul>
+
+                <h2>Tax Considerations</h2>
+                <p>Track all income and expenses. Set aside 25-30% for taxes. Consider forming an LLC once you're making consistent money.</p>
+
+                <h2>Conclusion</h2>
+                <p>The key is choosing something that fits your skills and schedule. Start with one hustle, master it, then add others. Weekend work can quickly become significant income!</p>
             `
         }
     };
 
-    // Create modal overlay
-    const modalHTML = `
-        <div id="articleModal" class="article-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="modal-category" id="modalCategory"></span>
-                    <button class="modal-close" onclick="closeArticle()">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <h1 id="modalTitle"></h1>
-                    <div class="modal-meta">
-                        <span id="modalDate"></span>
-                        <span id="modalReadTime"></span>
+    // Create modal HTML if it doesn't exist
+    if (!document.getElementById('articleModal')) {
+        const modalHTML = `
+            <div id="articleModal" class="article-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="modal-category" id="modalCategory"></span>
+                        <button class="modal-close" onclick="closeArticle()">&times;</button>
                     </div>
-                    <div id="modalContent"></div>
+                    <div class="modal-body">
+                        <h1 id="modalTitle"></h1>
+                        <div class="modal-meta">
+                            <span id="modalDate"></span>
+                            <span id="modalReadTime"></span>
+                        </div>
+                        <div id="modalContent"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
-
-    // Add modal to page if not already exists
-    if (!document.getElementById('articleModal')) {
+        `;
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
 
@@ -526,6 +338,9 @@ function openArticle(articleId) {
         // Show modal
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Scroll to top of modal
+        modal.scrollTop = 0;
     }
 }
 
@@ -549,3 +364,12 @@ document.addEventListener('keydown', function(event) {
         closeArticle();
     }
 });
+
+// Make all article buttons work the same way
+function openStory(storyId) {
+    openArticle(storyId); // Stories use same system
+}
+
+function openEducationalArticle(articleId) {
+    openArticle(articleId); // Educational articles use same system
+}
