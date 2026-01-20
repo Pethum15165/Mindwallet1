@@ -349,6 +349,318 @@ function openEducationalArticle(articleId) {
                 <h2>Conclusion</h2>
                 <p>Smart tax planning can save you thousands each year. Start with the basics, keep good records, and consider professional help as your situation becomes more complex.</p>
             `
+        },
+        // Finance Tips Articles
+        'budget-planning': {
+            title: "Monthly Budget Planning Made Simple",
+            date: "Jan 20, 2024",
+            readTime: "8 min read",
+            category: "Budgeting",
+            content: `
+                <h2>Create a Realistic Monthly Budget</h2>
+                <p>Learn how to create a monthly budget that actually works for your lifestyle and helps you save more money.</p>
+                <h2>Key Takeaways:</h2>
+                <ul>
+                    <li>Track your income and expenses for one month</li>
+                    <li>Categorize spending into needs and wants</li>
+                    <li>Set realistic savings goals</li>
+                    <li>Use the 50/30/20 rule as a starting point</li>
+                </ul>
+                <p>Start by listing all your sources of income, then track every expense for a month. This will give you a clear picture of where your money is going and help you identify areas where you can cut back.</p>
+            `
+        },
+        'automate-savings': {
+            title: "Automate Your Savings Strategy",
+            date: "Jan 18, 2024",
+            readTime: "6 min read",
+            category: "Saving",
+            content: `
+                <h2>Discover Automation for Effortless Saving</h2>
+                <p>Discover how automation can help you save money effortlessly and build wealth over time.</p>
+                <h2>Implementation Steps:</h2>
+                <ul>
+                    <li>Set up automatic transfers to savings account</li>
+                    <li>Use apps that round up purchases and save the difference</li>
+                    <li>Automate bill payments to avoid late fees</li>
+                    <li>Increase savings rate gradually over time</li>
+                </ul>
+                <p>When you automate your savings, you remove the temptation to spend that money. Make it a priority.</p>
+            `
+        },
+        'debt-reduction': {
+            title: "Debt Reduction Strategies That Work",
+            date: "Jan 16, 2024",
+            readTime: "10 min read",
+            category: "Debt",
+            content: `
+                <h2>Effective Methods to Pay Off Debt</h2>
+                <p>Effective methods to pay off debt faster and regain control of your financial future.</p>
+                <h2>Proven Methods:</h2>
+                <ul>
+                    <li>Snowball method: Pay smallest debts first</li>
+                    <li>Avalanche method: Pay highest interest first</li>
+                    <li>Consolidate high-interest debt</li>
+                    <li>Negotiate lower interest rates</li>
+                </ul>
+                <p>The key is consistency and choosing a method that keeps you motivated.</p>
+            `
+        },
+        // Advanced Articles
+        'tax-optimization': {
+            title: "Tax Optimization Strategies",
+            date: "Jan 14, 2024",
+            readTime: "12 min read",
+            category: "Advanced",
+            content: `
+                <h2>Legal Tax Minimization</h2>
+                <p>Legal strategies to minimize your tax burden and keep more of your hard-earned money.</p>
+                <h2>Key Strategies:</h2>
+                <ul>
+                    <li>Maximize retirement account contributions</li>
+                    <li>Utilize tax-loss harvesting</li>
+                    <li>Consider Roth conversions</li>
+                    <li>Track deductible expenses meticulously</li>
+                </ul>
+                <p>Work with a tax professional to implement these strategies effectively.</p>
+            `
+        },
+        'dollar-cost-averaging': {
+            title: "Dollar-Cost Averaging Mastery",
+            date: "Jan 12, 2024",
+            readTime: "9 min read",
+            category: "Investment",
+            content: `
+                <h2>Reduce Investment Risk Through Consistency</h2>
+                <p>Learn how to use dollar-cost averaging to reduce investment risk and build wealth consistently.</p>
+                <h2>Implementation Guide:</h2>
+                <ul>
+                    <li>Set up automatic monthly investments</li>
+                    <li>Choose low-cost index funds</li>
+                    <li>Stay consistent through market volatility</li>
+                    <li>Gradually increase contribution amounts</li>
+                </ul>
+                <p>This approach removes emotion from investing and builds discipline.</p>
+            `
+        },
+        // Latest Finance Tips
+        'budget-mistakes': {
+            title: "5 Budgeting Mistakes That Cost You Money",
+            date: "Jan 15, 2024",
+            readTime: "5 min read",
+            category: "Budgeting",
+            content: `
+                <h2>Common Budgeting Pitfalls</h2>
+                <p>Learn the most common budgeting pitfalls and how to avoid them to save thousands each year.</p>
+                <h2>The 5 Mistakes:</h2>
+                <ol>
+                    <li><strong>Not tracking expenses:</strong> You can't improve what you don't measure</li>
+                    <li><strong>Setting unrealistic budgets:</strong> Make it sustainable</li>
+                    <li><strong>Forgetting irregular expenses:</strong> Account for annual and quarterly costs</li>
+                    <li><strong>Not adjusting your budget:</strong> Review and update regularly</li>
+                    <li><strong>Ignoring small expenses:</strong> They add up quickly</li>
+                </ol>
+                <p>Avoiding these mistakes can save you thousands annually.</p>
+            `
+        },
+        '5-dollar-challenge': {
+            title: "The $5 Challenge That Builds Your Emergency Fund",
+            date: "Jan 12, 2024",
+            readTime: "3 min read",
+            category: "Saving",
+            content: `
+                <h2>A Simple Daily Habit</h2>
+                <p>A simple daily habit that can help you build a $1,800 emergency fund in just one year. No complicated apps or extreme frugality required.</p>
+                <h2>How It Works:</h2>
+                <p>Save every $5 bill you receive as change. If you make 1-2 transactions daily, you'll have $1,800+ by year's end.</p>
+                <h2>Why It Works:</h2>
+                <ul>
+                    <li>Simple and automatic</li>
+                    <li>Painless savings method</li>
+                    <li>Builds financial awareness</li>
+                    <li>Creates emergency fund fast</li>
+                </ul>
+            `
+        },
+        'index-vs-etfs': {
+            title: "Index Funds vs ETFs: Which is Better for Beginners?",
+            date: "Jan 10, 2024",
+            readTime: "7 min read",
+            category: "Investment",
+            content: `
+                <h2>Understanding the Differences</h2>
+                <p>Clear comparison to help you choose the right investment vehicle for your financial goals. Includes real examples and cost breakdowns.</p>
+                <h2>Index Funds:</h2>
+                <ul>
+                    <li>Minimum investment requirement</li>
+                    <li>Easy to understand</li>
+                    <li>Tax efficient</li>
+                    <li>Lower trading flexibility</li>
+                </ul>
+                <h2>ETFs:</h2>
+                <ul>
+                    <li>Trade like stocks</li>
+                    <li>Lower minimum investment</li>
+                    <li>More flexibility</li>
+                    <li>May have slightly higher fees</li>
+                </ul>
+                <p>For most beginners, either is a great choice - just start investing!</p>
+            `
+        },
+        'tax-deductions': {
+            title: "7 Tax Deductions You're Probably Missing",
+            date: "Jan 8, 2024",
+            readTime: "6 min read",
+            category: "Taxes",
+            content: `
+                <h2>Don't Leave Money on the Table</h2>
+                <p>Don't leave money on the table! These commonly overlooked deductions could save you hundreds on your tax bill.</p>
+                <h2>7 Deductions:</h2>
+                <ol>
+                    <li>State and local taxes (SALT) - up to $10,000</li>
+                    <li>Student loan interest - up to $2,500</li>
+                    <li>Medical expenses - over 7.5% of AGI</li>
+                    <li>Home office expenses - for self-employed</li>
+                    <li>Charitable donations - keep receipts</li>
+                    <li>Business meals and travel - 50% deductible</li>
+                    <li>Professional development - courses and books</li>
+                </ol>
+            `
+        },
+        'weekend-side-hustles': {
+            title: "Weekend Side Hustles That Actually Pay Well",
+            date: "Jan 5, 2024",
+            readTime: "8 min read",
+            category: "Income",
+            content: `
+                <h2>Real Opportunities to Earn Extra</h2>
+                <p>Real opportunities to earn $500+ per month working just weekends. No MLMs or get-rich-quick schemes - just legitimate income sources.</p>
+                <h2>Top Side Hustles:</h2>
+                <ul>
+                    <li><strong>Freelance writing:</strong> $500-2,000/month</li>
+                    <li><strong>Tutoring:</strong> $20-60/hour</li>
+                    <li><strong>Virtual assistant:</strong> $15-25/hour</li>
+                    <li><strong>Social media management:</strong> $300-1,000/month</li>
+                    <li><strong>Delivery services:</strong> $200-600/month</li>
+                    <li><strong>Handyman services:</strong> $50-150/hour</li>
+                </ul>
+                <p>Start with what you're good at and scale from there.</p>
+            `
+        },
+        // Stories
+        'sarah-debt-journey': {
+            title: "From $50K Debt to Financial Freedom in 3 Years",
+            date: "Dec 20, 2023",
+            readTime: "12 min read",
+            category: "Success Story",
+            content: `
+                <h2>Sarah's Journey to Financial Freedom</h2>
+                <p>Sarah's journey from overwhelming credit card debt to building a six-figure investment portfolio. Learn the exact strategies she used to pay off $50,000 in just 36 months.</p>
+                <h2>The Turning Point</h2>
+                <p>"The turning point was when I realized I wasn't bad with money - I just needed a system that worked for me." - Sarah M., 32, Marketing Manager</p>
+                <h2>Her Strategy:</h2>
+                <ul>
+                    <li>Cut unnecessary expenses ruthlessly</li>
+                    <li>Used the debt snowball method</li>
+                    <li>Negotiated lower interest rates</li>
+                    <li>Increased income through side work</li>
+                    <li>Automated remaining savings</li>
+                </ul>
+                <h2>Results:</h2>
+                <p><strong>$50,000</strong> Debt Paid Off</p>
+                <p><strong>36</strong> Months to Achieve</p>
+                <p><strong>$125,000</strong> Current Investments</p>
+            `
+        },
+        'mark-fire-journey': {
+            title: "Retired at 35: The FIRE Journey",
+            date: "Dec 18, 2023",
+            readTime: "15 min read",
+            category: "Retirement",
+            content: `
+                <h2>Mark's Path to Financial Independence</h2>
+                <p>How Mark achieved financial independence through aggressive saving and smart investing. Discover the exact FIRE strategy that allowed him to retire 30 years early.</p>
+                <h2>The Journey:</h2>
+                <p><strong>Age 25:</strong> Started with $50K salary, 60% savings rate</p>
+                <p><strong>Age 30:</strong> Reached $300K net worth</p>
+                <p><strong>Age 35:</strong> Achieved FIRE with $750K invested</p>
+                <h2>Key Insight:</h2>
+                <p>"The key was automating everything and living below my means. Compound interest did the heavy lifting." - Mark T., 35, Retired</p>
+                <h2>His Formula:</h2>
+                <ul>
+                    <li>Maximize income through career growth</li>
+                    <li>Keep expenses extremely low</li>
+                    <li>Invest everything in index funds</li>
+                    <li>Stay disciplined and consistent</li>
+                </ul>
+            `
+        },
+        'jenny-side-hustle': {
+            title: "How I Made $2,000/Month with Weekend Side Gigs",
+            date: "Dec 16, 2023",
+            readTime: "10 min read",
+            category: "Side Hustle",
+            content: `
+                <h2>Jenny's Multiple Income Streams</h2>
+                <p>Jenny's creative approach to boosting her income while working full-time. Learn how she built multiple income streams that now earn more than her day job.</p>
+                <h2>Her Timeline:</h2>
+                <p><strong>Month 1-3:</strong> $500/month - Freelance writing</p>
+                <p><strong>Month 4-6:</strong> $1,200/month - Added tutoring</p>
+                <p><strong>Month 7+:</strong> $2,000/month - Multiple streams</p>
+                <h2>Her Advice:</h2>
+                <p>"Start with what you know. I began with writing about my industry, then expanded to teaching others." - Jenny K., 28, Side Hustle Expert</p>
+                <h2>What She Does Now:</h2>
+                <ul>
+                    <li>Freelance writing - 20 hours/week</li>
+                    <li>Online tutoring - 15 hours/week</li>
+                    <li>Content consulting - 10 hours/week</li>
+                </ul>
+            `
+        },
+        'david-home-savings': {
+            title: "Bought First Home at 25 with Smart Saving",
+            date: "Dec 14, 2023",
+            readTime: "11 min read",
+            category: "Home Buying",
+            content: `
+                <h2>David's Strategic Down Payment Savings</h2>
+                <p>David's strategic approach to saving for a down payment while renting. How he saved $40K in 2 years on a $55K salary.</p>
+                <h2>His Results:</h2>
+                <p><strong>$40,000</strong> Down Payment Saved</p>
+                <p><strong>24</strong> Months to Save</p>
+                <p><strong>$55,000</strong> Starting Salary</p>
+                <h2>His Game-Changer Strategy:</h2>
+                <p>"House hacking was the game-changer. I rented out rooms to cut my housing costs in half." - David L., 27, Homeowner</p>
+                <h2>His Approach:</h2>
+                <ul>
+                    <li>Rented out rooms in his apartment</li>
+                    <li>Saved 50% of his after-tax income</li>
+                    <li>Cut lifestyle inflation</li>
+                    <li>Invested remaining funds wisely</li>
+                </ul>
+            `
+        },
+        'maria-investment-journey': {
+            title: "From $100 to $10K: My First Year Investing",
+            date: "Dec 12, 2023",
+            readTime: "9 min read",
+            category: "Investment",
+            content: `
+                <h2>Maria's Investment Growth Story</h2>
+                <p>Maria's investment journey starting with just $100. Learn how she grew her portfolio through consistent investing and education.</p>
+                <h2>Her First Year Timeline:</h2>
+                <p><strong>Month 1:</strong> Started with $100 in index funds</p>
+                <p><strong>Month 6:</strong> $3,000 invested, learning constantly</p>
+                <p><strong>Month 12:</strong> $10,000 portfolio, 15% returns</p>
+                <h2>Her Key Insight:</h2>
+                <p>"I started small but invested consistently. The key was never stopping the learning process." - Maria S., 24, Investor</p>
+                <h2>What She Learned:</h2>
+                <ul>
+                    <li>Start early, even with small amounts</li>
+                    <li>Consistent investing beats timing</li>
+                    <li>Education is as important as the money</li>
+                    <li>Compound interest is powerful</li>
+                </ul>
+            `
         }
     };
 
@@ -391,6 +703,15 @@ function openEducationalArticle(articleId) {
     }
 }
 
+// Alias for backward compatibility - use same modal for all
+function openArticle(articleId) {
+    openEducationalArticle(articleId);
+}
+
+function openStory(storyId) {
+    openEducationalArticle(storyId);
+}
+
 function closeArticle() {
     const modal = document.getElementById('articleModal');
     modal.style.display = 'none';
@@ -411,3 +732,17 @@ document.addEventListener('keydown', function(event) {
         closeArticle();
     }
 });
+
+// ===== TOGGLE CONTENT FOR INLINE EXPANSION =====
+function toggleContent(button) {
+    const card = button.closest('.content-card');
+    const content = card.querySelector('.expandable-content');
+    
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+        button.textContent = 'Read More';
+    } else {
+        content.style.display = 'block';
+        button.textContent = 'Read Less';
+    }
+}
