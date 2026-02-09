@@ -45,8 +45,8 @@
             <!-- Budgeting Section -->
             <div class="topic-section">
                 <div class="topic-header">
-                    <i class="fas fa-calculator"></i>
-                    <h2>Budgeting Fundamentals</h2>
+                    <i class="fas fa-book-open"></i>
+                    <h2>Concept Learn</h2>
                 </div>
                 <div class="topic-cards">
                     <div class="learning-card">
@@ -179,8 +179,8 @@
             <!-- Investing Basics Section -->
             <div class="topic-section">
                 <div class="topic-header">
-                    <i class="fas fa-chart-line"></i>
-                    <h2>Investing Basics</h2>
+                    <i class="fas fa-brain"></i>
+                    <h2>Financial Words Explain</h2>
                 </div>
                 <div class="topic-cards">
                     <div class="learning-card">
@@ -246,8 +246,8 @@
             <!-- Financial Discipline Section -->
             <div class="topic-section">
                 <div class="topic-header">
-                    <i class="fas fa-brain"></i>
-                    <h2>Financial Discipline</h2>
+                    <i class="fas fa-calculator"></i>
+                    <h2>Accounting Learn</h2>
                 </div>
                 <div class="topic-cards">
                     <div class="learning-card">
@@ -310,148 +310,64 @@
                 </div>
             </div>
 
-            <!-- NEW: Educational Articles Section -->
-            <section class="educational-articles">
+            <!-- Tricks & Strategies Section -->
+            <section id="strategies" class="content-section">
                 <div class="container">
-                    <h2 class="section-title">Deep Dive Articles</h2>
-                    <div class="articles-list">
-                        
-                        <!-- Educational Article 1: Compound Interest -->
-                        <article class="edu-article">
-                            <div class="article-icon">
-                                <i class="fas fa-graduation-cap"></i>
+                    <h2 class="section-title">
+                        <i class="fas fa-chess"></i>
+                        Tricks & Strategies
+                    </h2>
+                    <div class="content-grid">
+                        <article class="content-card">
+                            <div class="card-header">
+                                <span class="category-badge">Advanced</span>
+                                <h3>Tax Optimization Strategies</h3>
                             </div>
-                            <div class="article-preview">
-                                <h3>Understanding Compound Interest: The 8th Wonder of the World</h3>
-                                <p>A comprehensive guide to how compound interest works and why it's crucial for building wealth. Includes calculators and real-world examples.</p>
-                                <div class="article-tags">
-                                    <span class="tag">Investing</span>
-                                    <span class="tag">Beginner</span>
-                                    <span class="tag">Mathematics</span>
-                                </div>
-                                <div class="article-stats">
-                                    <span><i class="far fa-clock"></i> 15 min read</span>
-                                    <span><i class="far fa-user"></i> Beginner friendly</span>
-                                </div>
-                                <button class="start-reading-btn" onclick="openEducationalArticle('compound-interest-guide')">
-                                    Start Reading <i class="fas fa-book-open"></i>
-                                </button>
+                            <p>Legal strategies to minimize your tax burden and keep more of your hard-earned money.</p>
+                            <div class="video-preview">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
                             </div>
-                        </article>
-
-                        <!-- Educational Article 2: Emergency Fund Calculator -->
-                        <article class="edu-article">
-                            <div class="article-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="article-preview">
-                                <h3>Emergency Fund Calculator: Find Your Perfect Amount</h3>
-                                <p>Interactive guide to determine exactly how much you need in your emergency fund based on your lifestyle and expenses. Includes downloadable calculator.</p>
-                                <div class="article-tags">
-                                    <span class="tag">Emergency Fund</span>
-                                    <span class="tag">Calculator</span>
-                                    <span class="tag">Planning</span>
-                                </div>
-                                <div class="article-stats">
-                                    <span><i class="far fa-clock"></i> 10 min read</span>
-                                    <span><i class="fas fa-calculator"></i> Interactive tool</span>
+                            <div class="expandable-content">
+                                <div class="content-details">
+                                    <h4>Key Strategies:</h4>
+                                    <ul>
+                                        <li>Maximize retirement account contributions</li>
+                                        <li>Utilize tax-loss harvesting</li>
+                                        <li>Consider Roth conversions</li>
+                                        <li>Track deductible expenses meticulously</li>
+                                    </ul>
                                 </div>
                                 <button class="start-reading-btn" onclick="openEducationalArticle('emergency-fund-calculator')">
                                     Start Reading <i class="fas fa-book-open"></i>
                                 </button>
                             </div>
+                            <button class="read-more-btn" onclick="openArticle('tax-optimization')">Read More</button>
                         </article>
 
-                        <!-- Educational Article 3: Investment Strategy Comparison -->
-                        <article class="edu-article">
-                            <div class="article-icon">
-                                <i class="fas fa-chart-pie"></i>
+                        <article class="content-card">
+                            <div class="card-header">
+                                <span class="category-badge">Investment</span>
+                                <h3>Dollar-Cost Averaging Mastery</h3>
                             </div>
-                            <div class="article-preview">
-                                <h3>The Ultimate Investment Strategy Comparison Guide</h3>
-                                <p>Compare 10 popular investment strategies from conservative to aggressive, with real examples, risk levels, and expected returns.</p>
-                                <div class="article-tags">
-                                    <span class="tag">Investment</span>
-                                    <span class="tag">Comparison</span>
-                                    <span class="tag">Strategy</span>
-                                </div>
-                                <div class="article-stats">
-                                    <span><i class="far fa-clock"></i> 25 min read</span>
-                                    <span><i class="fas fa-chart-bar"></i> Data-driven</span>
-                                </div>
-                                <button class="start-reading-btn" onclick="openEducationalArticle('investment-strategy-comparison')">
-                                    Start Reading <i class="fas fa-book-open"></i>
-                                </button>
+                            <p>Learn how to use dollar-cost averaging to reduce investment risk and build wealth consistently.</p>
+                            <div class="video-preview">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
                             </div>
-                        </article>
-
-                        <!-- Educational Article 4: Credit Score Guide -->
-                        <article class="edu-article">
-                            <div class="article-icon">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <div class="article-preview">
-                                <h3>Credit Score 101: Everything You Need to Know</h3>
-                                <p>Complete guide to understanding, building, and maintaining excellent credit. Includes score calculators and improvement timelines.</p>
-                                <div class="article-tags">
-                                    <span class="tag">Credit</span>
-                                    <span class="tag">Credit Score</span>
-                                    <span class="tag">Guide</span>
-                                </div>
-                                <div class="article-stats">
-                                    <span><i class="far fa-clock"></i> 20 min read</span>
-                                    <span><i class="fas fa-star"></i> Essential guide</span>
+                            <div class="expandable-content">
+                                <div class="content-details">
+                                    <h4>Implementation Guide:</h4>
+                                    <ul>
+                                        <li>Set up automatic monthly investments</li>
+                                        <li>Choose low-cost index funds</li>
+                                        <li>Stay consistent through market volatility</li>
+                                        <li>Gradually increase contribution amounts</li>
+                                    </ul>
                                 </div>
                                 <button class="start-reading-btn" onclick="openEducationalArticle('credit-score-guide')">
                                     Start Reading <i class="fas fa-book-open"></i>
                                 </button>
                             </div>
-                        </article>
-
-                        <!-- Educational Article 5: Retirement Planning -->
-                        <article class="edu-article">
-                            <div class="article-icon">
-                                <i class="fas fa-piggy-bank"></i>
-                            </div>
-                            <div class="article-preview">
-                                <h3>Retirement Planning: Are You Saving Enough?</h3>
-                                <p>Step-by-step guide to calculate your retirement needs, choose the right accounts, and create a savings plan that ensures financial security.</p>
-                                <div class="article-tags">
-                                    <span class="tag">Retirement</span>
-                                    <span class="tag">Planning</span>
-                                    <span class="tag">401k</span>
-                                </div>
-                                <div class="article-stats">
-                                    <span><i class="far fa-clock"></i> 30 min read</span>
-                                    <span><i class="fas fa-chart-line"></i> Planning tool</span>
-                                </div>
-                                <button class="start-reading-btn" onclick="openEducationalArticle('retirement-planning-guide')">
-                                    Start Reading <i class="fas fa-book-open"></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <!-- Educational Article 6: Tax Planning -->
-                        <article class="edu-article">
-                            <div class="article-icon">
-                                <i class="fas fa-receipt"></i>
-                            </div>
-                            <div class="article-preview">
-                                <h3>Tax Planning Strategies for Young Professionals</h3>
-                                <p>Maximize your tax savings with deductions, credits, and strategies specifically for people in their 20s and 30s. Includes year-round planning calendar.</p>
-                                <div class="article-tags">
-                                    <span class="tag">Taxes</span>
-                                    <span class="tag">Tax Planning</span>
-                                    <span class="tag">Young Professionals</span>
-                                </div>
-                                <div class="article-stats">
-                                    <span><i class="far fa-clock"></i> 18 min read</span>
-                                    <span><i class="fas fa-calendar"></i> Year-round guide</span>
-                                </div>
-                                <button class="start-reading-btn" onclick="openEducationalArticle('tax-planning-young-professionals')">
-                                    Start Reading <i class="fas fa-book-open"></i>
-                                </button>
-                            </div>
+                            <button class="read-more-btn" onclick="openArticle('dollar-cost-averaging')">Read More</button>
                         </article>
 
                     </div>
