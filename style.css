@@ -372,47 +372,7 @@ a {
 
 /* Search Container */
 .search-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--bg-card);
-    border-radius: 50px;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.search-container:hover {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
-}
-
-.search-input {
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    width: 200px;
-    padding: 0.5rem;
-    font-size: 0.95rem;
-    outline: none;
-}
-
-.search-input::placeholder {
-    color: var(--text-secondary);
-}
-
-.search-btn {
-    background: none;
-    border: none;
-    color: var(--accent-primary);
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.search-btn:hover {
-    color: var(--accent-primary);
-    transform: scale(1.1);
+    display: none !important;
 }
 
 /* Page Header Search Bar */
