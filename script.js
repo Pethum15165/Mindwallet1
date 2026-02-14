@@ -80,7 +80,6 @@ function handleSearch(event) {
             if (titleText.includes(query) || descText.includes(query) || badgeText.includes(query)) {
                 currentPageResults.push({
                     title: title.textContent,
-                    description: description ? description.textContent.substring(0, 80) + '...' : 'No description',
                     element: card,
                     isCurrentPage: true,
                     category: badgeText
@@ -94,15 +93,14 @@ function handleSearch(event) {
         ...currentPageResults,
         ...globalResults.map(item => ({
             ...item,
-            isCurrentPage: false,
-            description: item.description.substring(0, 80) + '...'
+            isCurrentPage: false
         }))
     ];
     
-    displaySearchResults(combinedResults);
+    displaySearchResults(combinedResults, event.target);
 }
 
-function displaySearchResults(results) {
+function displaySearchResults(results, searchInput) {
     let resultsContainer = document.getElementById('searchResults');
     if (!resultsContainer) {
         resultsContainer = document.createElement('div');
@@ -111,15 +109,25 @@ function displaySearchResults(results) {
         document.body.appendChild(resultsContainer);
     }
     
+    // Position results below the search bar
+    const searchBar = searchInput.closest('.hero-search-container') || searchInput.closest('.page-search-container');
+    if (searchBar) {
+        const rect = searchBar.getBoundingClientRect();
+        resultsContainer.style.position = 'absolute';
+        resultsContainer.style.top = (window.scrollY + rect.bottom + 10) + 'px';
+        resultsContainer.style.left = (rect.left) + 'px';
+        resultsContainer.style.width = (rect.width) + 'px';
+        resultsContainer.style.maxWidth = (rect.width) + 'px';
+    }
+    
     if (results.length === 0) {
-        resultsContainer.innerHTML = '<div class="search-result-item"><p style="color: var(--text-secondary);">No results found</p></div>';
+        resultsContainer.innerHTML = '<div class="search-result-item"><p style="color: var(--text-secondary); margin: 0;">No results found</p></div>';
     } else {
         resultsContainer.innerHTML = results.map((result, index) => {
-            const pageLabel = !result.isCurrentPage ? ` <span style="font-size: 0.75rem; color: var(--accent-primary);">[${result.page}]</span>` : '';
+            const pageLabel = !result.isCurrentPage ? ` - ${result.page}` : '';
             return `
                 <div class="search-result-item" onclick="handleSearchResultClick(event, ${index}, ${!result.isCurrentPage})">
                     <div class="search-result-title">${result.title}${pageLabel}</div>
-                    <div class="search-result-desc">${result.category ? result.category + ' • ' : ''}${result.description}</div>
                 </div>
             `;
         }).join('');
