@@ -370,6 +370,97 @@ a {
     color: var(--accent-primary);
 }
 
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.search-container:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    width: 200px;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: var(--accent-primary);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    color: var(--accent-primary);
+    transform: scale(1.1);
+}
+
+.search-results {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    max-width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+    z-index: 999;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.search-results.active {
+    display: block;
+}
+
+.search-result-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+    background: var(--bg-secondary);
+    padding-left: 1.5rem;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-title {
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 0.3rem;
+}
+
+.search-result-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -1413,6 +1504,10 @@ a {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .search-container {
+        display: none;
     }
 
     .hero-title {

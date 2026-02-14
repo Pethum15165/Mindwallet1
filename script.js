@@ -6,6 +6,117 @@ function toggleMobileMenu() {
     navMenu.classList.toggle('active');
 }
 
+// ===== SEARCH FUNCTIONALITY =====
+function handleSearch(event) {
+    const query = event.target.value.toLowerCase();
+    
+    if (query.length === 0) {
+        closeSearchResults();
+        return;
+    }
+    
+    // Get all searchable elements
+    const articleCards = document.querySelectorAll('.article-card, .content-card, .learning-card, .value-card');
+    const results = [];
+    
+    articleCards.forEach(card => {
+        const title = card.querySelector('h3');
+        const description = card.querySelector('p');
+        const badge = card.querySelector('.category-badge');
+        
+        if (title) {
+            const titleText = title.textContent.toLowerCase();
+            const descText = description ? description.textContent.toLowerCase() : '';
+            const badgeText = badge ? badge.textContent.toLowerCase() : '';
+            
+            if (titleText.includes(query) || descText.includes(query) || badgeText.includes(query)) {
+                results.push({
+                    title: title.textContent,
+                    description: description ? description.textContent.substring(0, 80) + '...' : 'No description',
+                    element: card
+                });
+            }
+        }
+    });
+    
+    displaySearchResults(results);
+}
+
+function displaySearchResults(results) {
+    // Create or get results container
+    let resultsContainer = document.getElementById('searchResults');
+    if (!resultsContainer) {
+        resultsContainer = document.createElement('div');
+        resultsContainer.id = 'searchResults';
+        resultsContainer.className = 'search-results';
+        document.body.appendChild(resultsContainer);
+    }
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<div class="search-result-item"><p style="color: var(--text-secondary);">No results found</p></div>';
+    } else {
+        resultsContainer.innerHTML = results.map((result, index) => `
+            <div class="search-result-item" onclick="scrollToElement(event, ${index})">
+                <div class="search-result-title">${result.title}</div>
+                <div class="search-result-desc">${result.description}</div>
+            </div>
+        `).join('');
+    }
+    
+    resultsContainer.classList.add('active');
+}
+
+function scrollToElement(event, index) {
+    const query = document.getElementById('globalSearch').value.toLowerCase();
+    const articleCards = document.querySelectorAll('.article-card, .content-card, .learning-card, .value-card');
+    let resultIndex = 0;
+    
+    articleCards.forEach(card => {
+        const title = card.querySelector('h3');
+        const description = card.querySelector('p');
+        
+        if (title) {
+            const titleText = title.textContent.toLowerCase();
+            const descText = description ? description.textContent.toLowerCase() : '';
+            
+            if (titleText.includes(query) || descText.includes(query)) {
+                if (resultIndex === index) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.5)';
+                    setTimeout(() => {
+                        card.style.boxShadow = '';
+                    }, 2000);
+                }
+                resultIndex++;
+            }
+        }
+    });
+    
+    closeSearchResults();
+}
+
+function toggleSearch() {
+    const searchInput = document.getElementById('globalSearch');
+    searchInput.focus();
+}
+
+function closeSearchResults() {
+    const resultsContainer = document.getElementById('searchResults');
+    if (resultsContainer) {
+        resultsContainer.classList.remove('active');
+    }
+}
+
+// Close search results when clicking outside
+document.addEventListener('click', function(event) {
+    const searchContainer = document.querySelector('.search-container');
+    const resultsContainer = document.getElementById('searchResults');
+    
+    if (searchContainer && !searchContainer.contains(event.target) && resultsContainer) {
+        closeSearchResults();
+    }
+});
+
 // ===== ACCORDION FUNCTIONALITY =====
 function toggleAccordion(button) {
     const accordion = button.closest('.accordion');
