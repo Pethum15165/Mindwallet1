@@ -41,6 +41,10 @@
         <div class="container" style="position: relative; z-index: 2;">
             <h1 class="text-animate-shimmer">Finance Content Library</h1>
             <p class="text-animate-pop">Explore our comprehensive collection of finance tips, strategies, and real-life stories</p>
+            <div class="page-search-container">
+                <input type="text" class="page-search-input" placeholder="Search articles, tips, and stories..." id="pageSearch" onkeyup="handleSearch(event)">
+                <button class="page-search-btn" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+            </div>
         </div>
     </section>
 
