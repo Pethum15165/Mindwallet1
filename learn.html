@@ -32,21 +32,24 @@
     </nav>
 
     <!-- Learn Header -->
-    <section class="learn-header">
-        <div class="container">
-            <h1>Financial Learning Center</h1>
-            <p>Master essential financial concepts with our interactive learning modules</p>
+    <section class="learn-header" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80');">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.75); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="text-animate-wave">Financial Learning Center</h1>
+            <p class="text-animate-fade">Master essential financial concepts with our interactive learning modules</p>
         </div>
     </section>
 
     <!-- Learning Topics -->
-    <section class="learning-topics">
+    <section class="learning-topics" style="background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));">
         <div class="container">
             <!-- Budgeting Section -->
-            <div class="topic-section">
+            <div class="topic-section" style="background-image: url('https://images.unsplash.com/photo-1579621970563-430f63602022?auto=format&fit=crop&w=1920&q=60'); background-size: cover; background-position: center; padding: 4rem 0; border-radius: 20px; overflow: hidden; position: relative; margin-bottom: 4rem;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.8); z-index: 0;"></div>
+                <div class="container" style="position: relative; z-index: 1;">
                 <div class="topic-header">
-                    <i class="fas fa-book-open"></i>
-                    <h2>Concept Learn</h2>
+                    <i class="fas fa-book-open text-animate-pop"></i>
+                    <h2 class="text-animate-slide">Concept Learn</h2>
                 </div>
                 <div class="topic-cards">
                     <div class="learning-card">
@@ -101,74 +104,6 @@
                                         <li><strong>50/30/20:</strong> $2,000 needs, $1,200 wants, $800 savings</li>
                                         <li><strong>Zero-Based:</strong> Plan every dollar: $1,800 rent, $600 groceries, $500 savings, etc.</li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Saving Section -->
-            <div class="topic-section">
-                <div class="topic-header">
-                    <i class="fas fa-piggy-bank"></i>
-                    <h2>Saving Strategies</h2>
-                </div>
-                <div class="topic-cards">
-                    <div class="learning-card">
-                        <h3>Emergency Fund Essentials</h3>
-                        <p>Build a financial safety net to protect yourself from unexpected expenses.</p>
-                        <div class="accordion">
-                            <button class="accordion-btn" onclick="toggleAccordion(this)">
-                                Learn More <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="accordion-content">
-                                <h4>Why Emergency Funds Matter:</h4>
-                                <ul>
-                                    <li>Prevents debt accumulation during crises</li>
-                                    <li>Provides peace of mind</li>
-                                    <li>Covers 3-6 months of expenses</li>
-                                    <li>Keeps you financially stable</li>
-                                </ul>
-                                <div class="example-box">
-                                    <h5>Building Your Fund:</h5>
-                                    <p>Start with $1,000 mini-emergency fund, then build to 3-6 months of expenses:</p>
-                                    <ul>
-                                        <li>Monthly expenses: $2,500</li>
-                                        <li>3-month fund: $7,500</li>
-                                        <li>6-month fund: $15,000</li>
-                                    </ul>
-                                    <p>Save $300/month = 6-month fund in 25 months</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="learning-card">
-                        <h3>Automated Saving Techniques</h3>
-                        <p>Make saving effortless through automation and smart financial habits.</p>
-                        <div class="accordion">
-                            <button class="accordion-btn" onclick="toggleAccordion(this)">
-                                Learn More <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="accordion-content">
-                                <h4>Automation Strategies:</h4>
-                                <ul>
-                                    <li>Direct deposit to savings account</li>
-                                    <li>Automatic transfers on payday</li>
-                                    <li>Round-up savings apps</li>
-                                    <li>Automatic bill payment to avoid fees</li>
-                                </ul>
-                                <div class="example-box">
-                                    <h5>Automation Example:</h5>
-                                    <p>Set up automatic transfers:</p>
-                                    <ul>
-                                        <li>$200 to emergency fund monthly</li>
-                                        <li>$150 to retirement account</li>
-                                        <li>$50 to vacation fund</li>
-                                        <li>Round up purchases to nearest dollar</li>
-                                    </ul>
-                                    <p>Total automated savings: $400+ per month</p>
                                 </div>
                             </div>
                         </div>
@@ -324,8 +259,12 @@
                                 <h3>Tax Optimization Strategies</h3>
                             </div>
                             <p>Legal strategies to minimize your tax burden and keep more of your hard-earned money.</p>
-                            <div class="video-preview">
-                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                            <div class="media-preview">
+                                <figure class="media-figure">
+                                    <img class="media-thumb" src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=60" alt="Tax Optimization" onclick="openMediaModal('https://www.youtube.com/embed/dQw4w9WgXcQ','video')">
+                                    <figcaption>Watch: Tax Optimization — 6 min</figcaption>
+                                    <button class="play-overlay" onclick="openMediaModal('https://www.youtube.com/embed/dQw4w9WgXcQ','video')"><i class="fas fa-play"></i></button>
+                                </figure>
                             </div>
                             <div class="expandable-content">
                                 <div class="content-details">
@@ -350,8 +289,12 @@
                                 <h3>Dollar-Cost Averaging Mastery</h3>
                             </div>
                             <p>Learn how to use dollar-cost averaging to reduce investment risk and build wealth consistently.</p>
-                            <div class="video-preview">
-                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                            <div class="media-preview">
+                                <figure class="media-figure">
+                                    <img class="media-thumb" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=60" alt="Dollar Cost Averaging" onclick="openMediaModal('https://www.youtube.com/embed/dQw4w9WgXcQ','video')">
+                                    <figcaption>Watch: DCA Explained — 8 min</figcaption>
+                                    <button class="play-overlay" onclick="openMediaModal('https://www.youtube.com/embed/dQw4w9WgXcQ','video')"><i class="fas fa-play"></i></button>
+                                </figure>
                             </div>
                             <div class="expandable-content">
                                 <div class="content-details">

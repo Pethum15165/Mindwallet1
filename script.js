@@ -746,3 +746,86 @@ function toggleContent(button) {
         button.textContent = 'Read Less';
     }
 }
+
+// ===== MEDIA LIGHTBOX =====
+function openMediaModal(src, type) {
+    // Create modal if missing
+    if (!document.getElementById('mediaModal')) {
+        const html = `
+            <div id="mediaModal" class="media-modal">
+                <div class="modal-inner">
+                    <button class="modal-close" onclick="closeMediaModal()" style="position:absolute;right:10px;top:10px;font-size:28px;background:none;border:none;color:white;">&times;</button>
+                    <div id="mediaContainer"></div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', html);
+    }
+
+    const modal = document.getElementById('mediaModal');
+    const container = document.getElementById('mediaContainer');
+    if (type === 'image') {
+        container.innerHTML = `<img src="${src}" alt="media">`;
+    } else if (type === 'video') {
+        container.innerHTML = `<iframe src="${src}" allowfullscreen></iframe>`;
+    }
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMediaModal() {
+    const modal = document.getElementById('mediaModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        const container = document.getElementById('mediaContainer');
+        if (container) container.innerHTML = '';
+    }
+}
+
+// Close media modal when clicking outside
+window.addEventListener('click', function(event) {
+    const mediaModal = document.getElementById('mediaModal');
+    if (mediaModal && event.target === mediaModal) {
+        closeMediaModal();
+    }
+});
+
+// Close media modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeMediaModal();
+    }
+});
+
+// ===== SCROLL-TRIGGERED ANIMATIONS =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Add scroll-animate class to elements that should animate on scroll
+    const animateOnScrollElements = document.querySelectorAll(
+        '.text-animate-slide, .text-animate-pop, .text-animate-fade, .card-animate, .stat-animate, .article-card'
+    );
+    
+    animateOnScrollElements.forEach(element => {
+        element.classList.add('scroll-animate');
+    });
+
+    // Create Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+    });
+});
