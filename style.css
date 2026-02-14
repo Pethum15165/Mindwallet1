@@ -295,7 +295,7 @@ a {
         text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
     }
     }
-}
+
 
 /* Scroll-triggered animations */
 .scroll-animate {
@@ -605,10 +605,10 @@ a {
     height: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     text-align: center;
     overflow: hidden;
-}
+    
 
 .background-video {
     position: absolute;
@@ -1463,7 +1463,7 @@ a {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 
     .section-title {
