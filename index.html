@@ -37,16 +37,22 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section with Background Video -->
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');">
+        <video autoplay muted loop playsinline class="hero-bg-video">
+            <source src="https://videos.pexels.com/video-files/3945657/3945657-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Mind Wallet</h1>
-            <p class="hero-tagline">Upgrade Your Mind. Build Your Future.</p>
-            <p class="hero-description">
+            <h1 class="hero-title" id="welcomeTitle" style="font-size: 5.5rem; letter-spacing: 0.05em;">
+               <h1 class="text-animate-shimmer">Welcome to Mind Wallet</h1>
+            </h1>
+            <p class="hero-tagline text-animate-pop" style="animation-delay: 0.2s;">Upgrade Your Mind. Build Your Future.</p>
+            <p class="hero-description text-animate-fade" style="animation-delay: 0.4s;">
                 Your comprehensive platform for financial education, tips, and real-life money management strategies. 
                 Learn to make smarter financial decisions and build long-term wealth.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons animate-fade-in-up" style="animation-delay: 0.6s;">
                 <a href="contents.html" class="btn btn-primary">Explore Content</a>
                 <a href="learn.html" class="btn btn-secondary">Start Learning</a>
             </div>
@@ -56,28 +62,29 @@
     <!-- Summary Cards -->
     <section class="summary-cards">
         <div class="container">
+            <h2 class="section-title text-animate-fade" style="margin-bottom: 3rem;">Our Services</h2>
             <div class="cards-grid">
-                <div class="summary-card">
+                <div class="summary-card card-animate">
                     <div class="card-icon">
                         <i class="fas fa-book-open"></i>
                     </div>
-                    <h3>Finance Tips</h3>
+                    <h3 class="text-animate-pop" style="animation-delay: 0.1s;">Finance Tips</h3>
                     <p>Practical money management tips and strategies for everyday financial success.</p>
                     <a href="contents.html#tips" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card card-animate" style="animation-delay: 0.1s;">
                     <div class="card-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Smart Strategies</h3>
+                    <h3 class="text-animate-pop" style="animation-delay: 0.2s;">Smart Strategies</h3>
                     <p>Advanced financial strategies and tricks to maximize your wealth building potential.</p>
                     <a href="contents.html#strategies" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="summary-card">
+                <div class="summary-card card-animate" style="animation-delay: 0.2s;">
                     <div class="card-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Real Stories</h3>
+                    <h3 class="text-animate-pop" style="animation-delay: 0.3s;">Real Stories</h3>
                     <p>Inspiring real-life finance stories and lessons from successful money managers.</p>
                     <a href="contents.html#stories" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -88,11 +95,11 @@
     <!-- Featured Articles -->
     <section class="featured-articles">
         <div class="container">
-            <h2 class="section-title">Featured Articles</h2>
+            <h2 class="section-title text-animate-fade">Featured Articles</h2>
+            <p class="section-subtitle text-animate-fade" style="animation-delay: 0.2s; text-align: center; margin-bottom: 3rem;">Discover our most popular financial guides and insights</p>
             <div class="articles-grid">
-                <article class="article-card">
-                    <div class="article-image">
-                        <i class="fas fa-piggy-bank"></i>
+                <article class="article-card card-animate">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center;">
                     </div>
                     <div class="article-content">
                         <span class="category-badge">Budgeting</span>
@@ -101,9 +108,8 @@
                         <a href="#" class="read-more">Read More</a>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-image">
-                        <i class="fas fa-coins"></i>
+                <article class="article-card card-animate" style="animation-delay: 0.1s;">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center;">
                     </div>
                     <div class="article-content">
                         <span class="category-badge">Investing</span>
@@ -112,9 +118,8 @@
                         <a href="#" class="read-more">Read More</a>
                     </div>
                 </article>
-                <article class="article-card">
-                    <div class="article-image">
-                        <i class="fas fa-shield-alt"></i>
+                <article class="article-card card-animate" style="animation-delay: 0.2s;">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1633356122544-f134324ef6db?auto=format&fit=crop&w=500&q=60'); background-size: cover; background-position: center;">
                     </div>
                     <div class="article-content">
                         <span class="category-badge">Emergency Fund</span>
@@ -127,20 +132,59 @@
         </div>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Stats & Engagement Section -->
+    <section class="stats-section" style="background-image: url('https://images.unsplash.com/photo-1579621970563-430f63602022?auto=format&fit=crop&w=1920&q=80');">
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card stat-animate">
+                    <div class="stat-number text-animate-pop">50K+</div>
+                    <div class="stat-label">Students Learning</div>
+                </div>
+                <div class="stat-card stat-animate" style="animation-delay: 0.1s;">
+                    <div class="stat-number text-animate-pop" style="animation-delay: 0.1s;">$2.5M+</div>
+                    <div class="stat-label">Wealth Managed</div>
+                </div>
+                <div class="stat-card stat-animate" style="animation-delay: 0.2s;">
+                    <div class="stat-number text-animate-pop" style="animation-delay: 0.2s;">200+</div>
+                    <div class="stat-label">Expert Guides</div>
+                </div>
+                <div class="stat-card stat-animate" style="animation-delay: 0.3s;">
+                    <div class="stat-number text-animate-pop" style="animation-delay: 0.3s;">4.9★</div>
+                    <div class="stat-label">User Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title text-animate-slide">Ready to Transform Your Financial Future?</h2>
+                <p class="cta-description text-animate-fade" style="animation-delay: 0.2s;">Join thousands of users who are already on their path to financial freedom</p>
+                <div class="cta-buttons">
+                    <a href="learn.html" class="btn btn-primary btn-large text-animate-pop" style="animation-delay: 0.4s;">Get Started Free</a>
+                    <a href="contents.html" class="btn btn-secondary btn-large text-animate-pop" style="animation-delay: 0.5s;">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
     <section class="social-section">
         <div class="container">
-            <h2 class="section-title">Connect With Us</h2>
+            <h2 class="section-title text-animate-fade">Connect With Us</h2>
             <div class="social-links">
-                <a href="#" class="social-link youtube">
+                <a href="#" class="social-link youtube card-animate">
                     <i class="fab fa-youtube"></i>
                     <span>YouTube</span>
                 </a>
-                <a href="#" class="social-link facebook">
+                <a href="#" class="social-link facebook card-animate" style="animation-delay: 0.1s;">
                     <i class="fab fa-facebook"></i>
                     <span>Facebook</span>
                 </a>
-                <a href="#" class="social-link instagram">
+                <a href="#" class="social-link instagram card-animate" style="animation-delay: 0.2s;">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
