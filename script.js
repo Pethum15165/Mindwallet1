@@ -198,8 +198,10 @@ function scrollToElement(event, index) {
 }
 
 function toggleSearch() {
-    const searchInput = document.getElementById('globalSearch');
-    searchInput.focus();
+    const searchInput = document.querySelector('.hero-search-input') || document.querySelector('.page-search-input');
+    if (searchInput) {
+        searchInput.focus();
+    }
 }
 
 function closeSearchResults() {
@@ -211,10 +213,10 @@ function closeSearchResults() {
 
 // Close search results when clicking outside
 document.addEventListener('click', function(event) {
-    const searchContainer = document.querySelector('.search-container');
     const resultsContainer = document.getElementById('searchResults');
+    const searchContainer = event.target.closest('.hero-search-container') || event.target.closest('.page-search-container');
     
-    if (searchContainer && !searchContainer.contains(event.target) && resultsContainer) {
+    if (!searchContainer && resultsContainer) {
         closeSearchResults();
     }
 });

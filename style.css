@@ -370,11 +370,6 @@ a {
     color: var(--accent-primary);
 }
 
-/* Search Container */
-.search-container {
-    display: none !important;
-}
-
 /* Page Header Search Bar */
 .page-search-container {
     display: flex;
@@ -1562,10 +1557,6 @@ a {
 
     .nav-menu.active {
         left: 0;
-    }
-
-    .search-container {
-        display: none;
     }
 
     .page-search-container {
