@@ -1,3 +1,44 @@
+// ===== GLOBAL SEARCH DATABASE =====
+const globalSearchDatabase = [
+    // Index.html articles
+    { title: "The 50/30/20 Rule Explained", category: "Budgeting", description: "Master the simple budgeting rule that can transform your financial life", page: "index.html" },
+    { title: "Investment Basics for Beginners", category: "Investing", description: "Start your investment journey with these fundamental concepts", page: "index.html" },
+    { title: "Building Your Emergency Fund", category: "Emergency Fund", description: "Learn how to create and maintain an emergency fund", page: "index.html" },
+    
+    // Contents.html articles
+    { title: "5 Budgeting Mistakes That Cost You Money", category: "Budgeting", description: "Learn the most common budgeting pitfalls and how to avoid them", page: "contents.html" },
+    { title: "The $5 Challenge That Builds Your Emergency Fund", category: "Saving", description: "A simple daily habit that can help you build emergency funds", page: "contents.html" },
+    { title: "Index Funds vs ETFs: Which is Better for Beginners?", category: "Investment", description: "Clear comparison to help you choose the right investment vehicle", page: "contents.html" },
+    { title: "7 Tax Deductions You're Probably Missing", category: "Taxes", description: "Don't leave money on the table! These commonly overlooked deductions", page: "contents.html" },
+    { title: "Weekend Side Hustles That Actually Pay Well", category: "Income", description: "Real opportunities to earn $500+ per month working weekends", page: "contents.html" },
+    { title: "Emergency Fund Calculator: Find Your Perfect Amount", category: "Emergency Fund", description: "Interactive guide to determine exactly how much you need", page: "contents.html" },
+    { title: "From $50K Debt to Financial Freedom in 3 Years", category: "Success Story", description: "Sarah's journey from overwhelming debt to financial freedom", page: "contents.html" },
+    { title: "Retired at 35: The FIRE Journey", category: "Retirement", description: "How Mark achieved financial independence through smart investing", page: "contents.html" },
+    { title: "How I Made $2,000/Month with Weekend Side Gigs", category: "Side Hustle", description: "Jenny's creative approach to boosting her income", page: "contents.html" },
+    { title: "Bought First Home at 25 with Smart Saving", category: "Home Buying", description: "David's strategic approach to saving for a down payment", page: "contents.html" },
+    { title: "From $100 to $10K: My First Year Investing", category: "Investment", description: "Maria's investment journey starting with just $100", page: "contents.html" },
+    
+    // Learn.html topics
+    { title: "What is Budgeting?", category: "Concept", description: "Budgeting is the process of creating a plan to spend your money", page: "learn.html" },
+    { title: "Popular Budgeting Methods", category: "Concept", description: "Explore different budgeting approaches to find what works best", page: "learn.html" },
+    { title: "Investment Fundamentals", category: "Investment", description: "Understanding the basics of investing and how to get started", page: "learn.html" },
+    { title: "Investment Vehicles", category: "Investment", description: "Explore different types of investments and their characteristics", page: "learn.html" },
+    { title: "Building Financial Habits", category: "Discipline", description: "Develop the mental discipline needed for financial success", page: "learn.html" },
+    { title: "Overcoming Financial Obstacles", category: "Discipline", description: "Common challenges and strategies to overcome them", page: "learn.html" },
+    { title: "Tax Optimization Strategies", category: "Advanced", description: "Legal strategies to minimize your tax burden", page: "learn.html" },
+    { title: "Dollar-Cost Averaging Mastery", category: "Investment", description: "Learn how to use dollar-cost averaging to reduce investment risk", page: "learn.html" },
+    
+    // About.html content
+    { title: "Education First", category: "Value", description: "We prioritize clear, comprehensive education", page: "about.html" },
+    { title: "Accessibility", category: "Value", description: "Financial knowledge should be available to everyone", page: "about.html" },
+    { title: "Trust & Integrity", category: "Value", description: "We provide honest, unbiased information", page: "about.html" },
+    { title: "Community", category: "Value", description: "We believe in the power of shared learning", page: "about.html" },
+    { title: "Budgeting & Money Management", category: "Focus", description: "Teaching practical budgeting skills and money management", page: "about.html" },
+    { title: "Saving Strategies", category: "Focus", description: "Helping individuals develop consistent saving habits", page: "about.html" },
+    { title: "Investment Education", category: "Focus", description: "Demystifying investing concepts for beginners", page: "about.html" },
+    { title: "Financial Psychology", category: "Focus", description: "Understanding the mental and emotional aspects of money", page: "about.html" }
+];
+
 // ===== MOBILE NAVIGATION =====
 function toggleMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
@@ -5,6 +46,180 @@ function toggleMobileMenu() {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
 }
+
+// ===== SEARCH FUNCTIONALITY =====
+function handleSearch(event) {
+    const query = event.target.value.toLowerCase();
+    
+    if (query.length === 0) {
+        closeSearchResults();
+        return;
+    }
+    
+    // First, search global database
+    const globalResults = globalSearchDatabase.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.description.toLowerCase().includes(query) || 
+        item.category.toLowerCase().includes(query)
+    );
+    
+    // Then, search current page elements
+    const currentPageResults = [];
+    const articleCards = document.querySelectorAll('.article-card, .content-card, .learning-card, .value-card');
+    
+    articleCards.forEach(card => {
+        const title = card.querySelector('h3');
+        const description = card.querySelector('p');
+        const badge = card.querySelector('.category-badge');
+        
+        if (title) {
+            const titleText = title.textContent.toLowerCase();
+            const descText = description ? description.textContent.toLowerCase() : '';
+            const badgeText = badge ? badge.textContent.toLowerCase() : '';
+            
+            if (titleText.includes(query) || descText.includes(query) || badgeText.includes(query)) {
+                currentPageResults.push({
+                    title: title.textContent,
+                    element: card,
+                    isCurrentPage: true,
+                    category: badgeText
+                });
+            }
+        }
+    });
+    
+    // Combine results - show current page results first, then global results
+    const combinedResults = [
+        ...currentPageResults,
+        ...globalResults.map(item => ({
+            ...item,
+            isCurrentPage: false
+        }))
+    ];
+    
+    displaySearchResults(combinedResults, event.target);
+}
+
+function displaySearchResults(results, searchInput) {
+    let resultsContainer = document.getElementById('searchResults');
+    if (!resultsContainer) {
+        resultsContainer = document.createElement('div');
+        resultsContainer.id = 'searchResults';
+        resultsContainer.className = 'search-results';
+        document.body.appendChild(resultsContainer);
+    }
+    
+    // Position results below the search bar
+    const searchBar = searchInput.closest('.hero-search-container') || searchInput.closest('.page-search-container');
+    if (searchBar) {
+        const rect = searchBar.getBoundingClientRect();
+        resultsContainer.style.position = 'absolute';
+        resultsContainer.style.top = (window.scrollY + rect.bottom + 10) + 'px';
+        resultsContainer.style.left = (rect.left) + 'px';
+        resultsContainer.style.width = (rect.width) + 'px';
+        resultsContainer.style.maxWidth = (rect.width) + 'px';
+    }
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<div class="search-result-item"><p style="color: var(--text-secondary); margin: 0;">No results found</p></div>';
+    } else {
+        resultsContainer.innerHTML = results.map((result, index) => {
+            const pageLabel = !result.isCurrentPage ? ` - ${result.page}` : '';
+            return `
+                <div class="search-result-item" onclick="handleSearchResultClick(event, ${index}, ${!result.isCurrentPage})">
+                    <div class="search-result-title">${result.title}${pageLabel}</div>
+                </div>
+            `;
+        }).join('');
+    }
+    
+    resultsContainer.classList.add('active');
+}
+
+function handleSearchResultClick(event, index, isExternalPage) {
+    const results = getCurrentSearchResults();
+    const result = results[index];
+    
+    if (isExternalPage && result.page) {
+        // Navigate to the page with search term
+        const query = document.getElementById('globalSearch').value;
+        window.location.href = `${result.page}?search=${encodeURIComponent(query)}`;
+    } else {
+        scrollToElement(event, index);
+    }
+}
+
+function getCurrentSearchResults() {
+    const query = document.getElementById('globalSearch').value.toLowerCase();
+    const globalResults = globalSearchDatabase.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.description.toLowerCase().includes(query) || 
+        item.category.toLowerCase().includes(query)
+    );
+    
+    const currentPageResults = [];
+    const articleCards = document.querySelectorAll('.article-card, .content-card, .learning-card, .value-card');
+    
+    articleCards.forEach(card => {
+        const title = card.querySelector('h3');
+        if (title) {
+            const titleText = title.textContent.toLowerCase();
+            const descText = card.querySelector('p') ? card.querySelector('p').textContent.toLowerCase() : '';
+            
+            if (titleText.includes(query) || descText.includes(query)) {
+                currentPageResults.push({
+                    title: title.textContent,
+                    element: card,
+                    isCurrentPage: true
+                });
+            }
+        }
+    });
+    
+    return [
+        ...currentPageResults,
+        ...globalResults.map(item => ({...item, isCurrentPage: false}))
+    ];
+}
+
+function scrollToElement(event, index) {
+    const results = getCurrentSearchResults();
+    const result = results[index];
+    
+    if (result.element) {
+        result.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        result.element.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.5)';
+        setTimeout(() => {
+            result.element.style.boxShadow = '';
+        }, 2000);
+    }
+    
+    closeSearchResults();
+}
+
+function toggleSearch() {
+    const searchInput = document.querySelector('.hero-search-input') || document.querySelector('.page-search-input');
+    if (searchInput) {
+        searchInput.focus();
+    }
+}
+
+function closeSearchResults() {
+    const resultsContainer = document.getElementById('searchResults');
+    if (resultsContainer) {
+        resultsContainer.classList.remove('active');
+    }
+}
+
+// Close search results when clicking outside
+document.addEventListener('click', function(event) {
+    const resultsContainer = document.getElementById('searchResults');
+    const searchContainer = event.target.closest('.hero-search-container') || event.target.closest('.page-search-container');
+    
+    if (!searchContainer && resultsContainer) {
+        closeSearchResults();
+    }
+});
 
 // ===== ACCORDION FUNCTIONALITY =====
 function toggleAccordion(button) {
